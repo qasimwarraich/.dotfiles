@@ -1,0 +1,102 @@
+# Aliases
+alias ls='ls --color=auto'
+alias lsa="ls -lah --color=auto"
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias cp="cp -i"                          # confirm before overwriting something
+alias rm="rm -i"                          # confirm before deleting something
+alias mv="mv -i"                          # confirm before moving something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias eb="exec bash"
+alias ez="exec zsh"
+alias v="nvim" 
+alias z="zathura"
+alias C="./a.out"
+alias M='make'
+alias ms='makescript'
+alias calc="qalculate-gtk"
+alias P="python3"
+alias pc="playerctl"
+alias nb="newsboat"
+alias ka="killall"
+alias ht="htop"
+alias bt="bashtop"
+alias xa="xargs"
+alias xo="xdg-open"
+alias xs="xsel --clipboard --input"
+alias xsc="tr -d '\n\f'| xsel --clipboard --input"
+alias forlols="fortune|cowsay|lolcat"
+alias smc="source /home/spam/Clones/miniconda3/bin/activate"
+alias dmc="conda deactivate"
+alias cdebug="cp ~/Programming/Templates/Vimspector/C/.vimspector.json ./"
+alias pydebug="cp ~/Programming/Templates/Vimspector/Python/.vimspector.json ./"
+alias tsconf="cp ~/Programming/Templates/tsconfig/tsconfig.json ./"
+alias cformat="cp ~/Programming/Templates/clang-format/clang-format ./.clang-format"
+
+alias spam="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias rsn="pacman -Qet | fzf -m --preview 'pacman -Si {1}'| awk '{print \$1}' | sudo xargs -ro pacman -Rsn"
+alias Spam="paru -Slq | fzf -m --preview 'paru -Si {1}' | xargs -ro paru -S"
+alias update="sudo pacman -Syu"
+
+alias ..="cd .."
+alias cda="cd /home/spam/.config/awesome/"
+alias cdd="pwd | tr -d '\n' | xsel --clipboard --input"
+alias cdp="cd /home/spam/Programming"
+alias cdC="cd /home/spam/Programming/C"
+alias cdt="cd /home/spam/Programming/TESTING"
+alias cdu="cd /home/spam/Documents/uzh"
+alias cds="cd /home/spam/.scripts"
+alias cdc="cd /home/spam/.config"
+alias cdv="cd /home/spam/Pictures/Vids"
+alias cdP="cd /home/spam/Pictures"
+alias vswaps="cd ~/.local/share/nvim/swap"
+
+alias vrc="nvim ~/.config/nvim/init.vim"
+alias brc="nvim ~/.bashrc"
+alias zrc="$EDITOR ~/.zshrc"
+alias xrc="nvim ~/.xinitrc"
+alias arc="$EDITOR ~/.aliases"
+alias prc="$EDITOR ~/.config/zshscripts/spaceship.zsh"
+alias shortcuts="nvim ~/.config/sxhkd/sxhkdrc"
+
+alias tkill="tmux kill-session"
+alias evpn="ethvpn connect sslvpn.ethz.ch/student-net"
+alias dvpn="ethvpn disconnect"
+alias spambook="ssh Qasim@192.168.1.107"
+alias desk-remote="ssh  -p 42069 spam@spam.internet-box.ch"
+alias desk-local="ssh -p 42069 spam@spam-linux"
+alias pi-remote="ssh  -p 1312 pi@spam.internet-box.ch"
+alias pi-local="ssh -XY -p 1312 pi@192.168.1.118"
+alias think-local="ssh -XY spam@thinkspam"
+alias netrestart="sudo systemctl NetworkManager.service"
+
+alias ga="git add ."
+alias gp="git push"
+alias gP="git pull"
+alias gc="git commit"
+alias gst="git status"
+alias gid="git config user.email "qasim.warraich@gmail.com"; git config user.name "qasimwarraich""
+alias gd="git diff"
+alias gC="git checkout"
+
+alias sin="sudo make clean install"
+alias sun="sudo make uninstall"
+alias vc="nvim config.h"
+
+alias rshort="kill -SIGUSR1 $(ps aux | grep 'sxhkd' | awk '{print $2}' | head -1)"
+alias wttr="curl v2.wttr.in/Bern"
+
+alias blue="sudo rfkill unblock bluetooth"
+alias bblue="sudo rfkill block bluetooth"
+alias fan="sudo systemctl start thinkfan.service"
+alias sttray="stalonetray --icon-size=16  -d none --grow-gravity E --geometry 1X1-490-1052  -bg \"#\"444444 --window-type dock -f 18 --window-layer top  --kludges fix_window_pos,force_icons_size,use_icons_hints"
+alias rssh="rofi -show ssh"
+
+# Helpful funcitons 
+vs(){ du -a ~/ | awk '{print $2}' | fzf | xargs -r $EDITOR;}
+zs(){ find ~/ -name "*.pdf" | fzf -m | xargs -d '\n' -r zathura;}
+cs(){ cd "$(find ~/ -type d |  fzf)";} 
+CS(){ cd "$(find ~/ -type d | grep Programming | fzf)";} 
+
