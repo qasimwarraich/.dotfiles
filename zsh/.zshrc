@@ -56,6 +56,7 @@ zplug load
 
 #autosuggest config
 bindkey '^ ' autosuggest-accept
+bindkey '^[ ' autosuggest-toggle
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
