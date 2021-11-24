@@ -1,0 +1,214 @@
+# A list of hotkeys independent of the window manager. 
+
+
+# Launch browser
+super + w
+        firefox
+super + q
+        qutebrowser
+# Launch dmenu
+super + p 
+        dmenu_run
+# Printscreen flameshot
+Print 
+        flameshot gui
+
+# Clipmenu 
+super + Insert
+        clipmenu -x 12 -y 12 -w 1896
+
+#Volume stuff
+
+#mute
+XF86AudioMute
+         amixer -D pulse sset Master toggle && amixer -D pulse get Master | grep '\[off\]' && notify-send "Muted" || amixer -D pulse sset Master Toggle && notify-send "Unmuted"
+         # amixer sset Master toggle && amixer get Master | grep '\[off\]' && notify-send "Muted" || amixer sset Speaker unmute && notify-send "Unmuted"; exec ~/.scripts/bar-refresh/barrefresh.sh; 
+
+#volume down
+XF86AudioLowerVolume
+        amixer -D pulse sset Master 3%-
+        # amixer -q sset Master 3%- ; exec ~/.scripts/bar-refresh/barrefresh.sh
+
+#volume up
+XF86AudioRaiseVolume
+        amixer -D pulse sset Master 3%+
+        # amixer -q sset Master 3%+ ; exec ~/.scripts/bar-refresh/barrefresh.sh
+
+#mic toggle
+XF86AudioMicMute
+        amixer set Capture toggle && amixer get Capture | grep  '\[off\]' && notify-send "Mic Off" || notify-send "Mic On"
+
+#Play-Pause (Headphones)
+XF86AudioPlay
+        playerctl play-pause
+
+#Play-Pause (Headphones)
+XF86AudioPause
+        playerctl play-pause
+
+#Play-Pause (Headphones)
+XF86AudioPrev
+        playerctl previous
+
+#Play-Pause (Headphones)
+XF86AudioNext
+        playerctl next
+
+#Play-Pause mediakey
+super + F1
+        playerctl play-pause
+
+#Play-Pause mediakey
+super + F2
+        playerctl previous
+
+#Play-Pause mediakey
+super + F3
+        playerctl next
+
+##Vol up mediakey
+#super + shift + F3
+#        playerctl volume 5+
+
+##Vol down mediakey
+#super + shift + F2
+#        playerctl volume 5-
+#
+#Brightness Up
+XF86MonBrightnessUp
+        xbacklight -inc 10
+
+#Brightness Down
+XF86MonBrightnessDown
+        xbacklight -dec 10
+
+#Max Brightness
+super + F6
+        xbacklight -set 100
+
+#Min Brightness
+super + F5
+        xbacklight -set 1
+
+#Dmenu Network Manager
+super + shift + w
+        networkmanager_dmenu -x 12 -y 12 -w 1896
+
+#Keepassxc
+ctrl + alt + k
+        keepassxc
+#Xkill 
+ctrl + alt + x 
+        xkill
+
+#Emoji-Dmenu
+super + e
+        ~/.scripts/emoji-dmenu
+
+#Discord
+super + v 
+        discord
+
+#Weather
+super + c 
+        st -e bash -c 'curl v2.wttr.in/Bern; bash'
+
+
+#File Manager
+ctrl + alt + f 
+        pcmanfm
+
+#Power Options
+super + Escape
+        ~/.scripts/poweroptions
+
+ctrl + alt + Escape
+        systemctl suspend 
+
+#Tray
+super + shift + t
+        ~/.scripts/tray
+
+#Kill the tray
+ctrl + alt + t
+        ~/.scripts/traykill
+
+#Bluetooth
+super + shift + b
+        blueman-applet
+
+#Bluetooth applet
+ctrl + alt + b
+        blueman-manager
+
+# fortune_slideshow 
+XF86Favorites
+        ~/.scripts/fortune_slideshow
+
+#Qalculate alias launch
+super + shift + c 
+        qalculate-gtk
+
+#Shortcut to this file
+super + shift + s 
+        st -e bash -c 'nvim ~/.config/sxhkd/sxhkdrc; bash'
+
+#Make display blank 
+super + shift + Escape
+        sleep 0.3s && xset dpms force off
+
+#Make arandr spawn
+XF86Display
+        ~/.scripts/hdmi-config
+
+#Make arandr spawn
+ctrl + alt + v
+        arandr
+
+#Pop open alsa mixer 
+ctrl + alt + a 
+        st -e bash -c 'alsamixer'
+
+#Pulse audio mixer
+super + shift + a 
+        pavucontrol
+
+#launch htop
+ctrl + alt + h
+    st -e 'htop'
+
+#Caps lock 
+shift + Escape
+        xdotool key Caps_Lock
+
+#Disable touchpad 
+super + F11
+         ~/.scripts/touchpad_toggle.sh
+
+#Zoom links
+ctrl + alt + l
+        ~/.scripts/zoom-client-launch
+
+#News boat
+ctrl + alt + n
+        st -e bash -c 'newsboat'
+
+# Launch Spotify
+ctrl + alt + s 
+        spotify
+
+# Launch Thunderbird
+ctrl + alt + m 
+        thunderbird
+
+# Rofi alt-tabbing
+alt + Tab
+        rofi -show window
+
+#Screenshot testing
+super + Print
+    flameshot screen -p /home/spam/Pictures/
+
+#Alt Terminal
+super + alt + Return
+    alacritty
