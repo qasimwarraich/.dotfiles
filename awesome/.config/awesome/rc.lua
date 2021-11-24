@@ -227,11 +227,6 @@ awful.screen.connect_for_each_screen(function(s)
                 font =  "Hack Nerd Font 9"
             },
             wibox.widget.textbox(" | "),
-            battery_widget{
-                show_current_level = 1,
-                font =  "Hack Nerd Font 9"
-            },
-            wibox.widget.textbox(" | "),
             mytextclock,
         },
     }
