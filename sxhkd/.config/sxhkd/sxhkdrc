@@ -111,7 +111,7 @@ super + v
 
 #Weather
 super + c 
-        st -e bash -c 'curl v2.wttr.in/Bern; bash'
+        alacritty -e bash -c 'curl v2.wttr.in/Bern; bash'
 
 
 #File Manager
