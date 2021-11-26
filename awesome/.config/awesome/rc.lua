@@ -217,6 +217,8 @@ awful.screen.connect_for_each_screen(function(s)
             -- mykeyboardlayout,
             wibox.widget.systray(),
             wibox.widget.textbox(" | "),
+            awful.widget.watch("bash -c 'sensors | grep CPU | tr -s '[:space:]''", 10),
+            wibox.widget.textbox("| "),
             volume_widget(),
             wibox.widget.textbox(" | "),
             brightness_widget{
