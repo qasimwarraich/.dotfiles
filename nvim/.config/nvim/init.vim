@@ -144,6 +144,9 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 "  Nvim LSP
 Plug 'neovim/nvim-lspconfig'
 
+" Nvim Lint
+Plug 'mfussenegger/nvim-lint'
+
 " Fugitive git tool
 Plug 'tpope/vim-fugitive'
 
@@ -363,7 +366,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "tsserver", "clangd", 'vimls', 'html', 'cssls','intelephense' }
+local servers = { "pyright", "rust_analyzer", "tsserver", "clangd", 'vimls', 'html', 'cssls','intelephense', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -371,6 +374,37 @@ EOF
 
 
 lua << EOF
+
+
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+require'lspconfig'.sumneko_lua.setup {
+    cmd = { "lua-language-server" },
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -398,7 +432,7 @@ EOF
 highlight! link TSKeywordOperator Keyword
 
 " Nvim Tree Config
-let g:nvim_tree_gitignore = 1 "0 by default
+" let g:nvim_tree_gitignore = 1 "0 by default
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
@@ -685,3 +719,11 @@ require('gitsigns').setup {
 EOF
 
 let g:prettier#config#tab_width = '2'
+
+
+" lua <<EOF
+" require('lint').linters_by_ft = {
+"   markdown = {'vale', 'markdownlint'}
+" }
+" EOF
+" au InsertLeave *.md lua require('lint').try_lint()
