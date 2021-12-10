@@ -208,7 +208,9 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             -- mylauncher,
             s.mytaglist,
+            wibox.widget.textbox(" ["),
             s.mylayoutbox,
+            wibox.widget.textbox("] "),
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
