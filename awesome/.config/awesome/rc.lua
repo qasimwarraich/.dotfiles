@@ -219,7 +219,10 @@ awful.screen.connect_for_each_screen(function(s)
             -- mykeyboardlayout,
             wibox.widget.systray(),
             wibox.widget.textbox(" | "),
-            awful.widget.watch("bash -c 'sensors | grep CPU | tr -s '[:space:]''", 10),
+            awful.widget.watch("bash -c 'sensors | grep CPU | tr -s '[:space:]''", 10, function(widget, stdout)
+                stdout = string.gsub(stdout, 'CPU: %+','')
+                widget:set_markup(string.format(" <span foreground='red'>%s</span>",stdout))
+                end),
             wibox.widget.textbox("| "),
             volume_widget(),
             wibox.widget.textbox(" | "),
