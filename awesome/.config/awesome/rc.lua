@@ -236,7 +236,9 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.textbox(" | "),
             battery_widget{
                 show_current_level = 1,
-                font =  "Hack Nerd Font 9"
+                font =  "Hack Nerd Font 9",
+                warning_msg_title = "Low Battery!",
+                warning_msg_text = "It's time to plug in"
             },
             wibox.widget.textbox(" | "),
             mytextclock,
