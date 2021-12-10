@@ -389,7 +389,19 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "(un)maximize horizontally", group = "client"}),
+    awful.key({modkey}, "g",
+        function()
+        if beautiful.useless_gap > 0 then
+          beautiful.useless_gap = 0
+        else
+          beautiful.useless_gap = 4
+        end
+        awful.screen.connect_for_each_screen(function(s)
+          awful.layout.arrange(s)
+        end)
+        end,
+{description = "Toggle gaps", group = "layout"})
 )
 
 -- Bind all key numbers to tags.
@@ -581,6 +593,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- Gaps 
-beautiful.useless_gap = 4 
+-- Gaps
+beautiful.useless_gap = 4
 -- }}}
