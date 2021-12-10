@@ -301,7 +301,10 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Control"          }, "x", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-
+    awful.key({ modkey, "Mod1"    }, "h",     function () awful.client.incwfact( 0.05)    end,
+              {description = "increase stack height factor", group = "layout"}),
+    awful.key({ modkey, "Mod1"    }, "l",     function () awful.client.incwfact(-0.05)    end,
+              {description = "decrease stack height factor", group = "layout"}),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
