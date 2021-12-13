@@ -26,12 +26,12 @@ XF86AudioMute
 
 #volume down
 XF86AudioLowerVolume
-        amixer -D pulse sset Master 3%-
+        amixer -D pulse sset Master 3%- ; ~/.scripts/show_volume
         # amixer -q sset Master 3%- ; exec ~/.scripts/bar-refresh/barrefresh.sh
 
 #volume up
 XF86AudioRaiseVolume
-        amixer -D pulse sset Master 3%+
+        amixer -D pulse sset Master 3%+ ; ~/.scripts/show_volume
         # amixer -q sset Master 3%+ ; exec ~/.scripts/bar-refresh/barrefresh.sh
 
 #mic toggle
@@ -122,6 +122,10 @@ ctrl + alt + f
 super + Escape
         ~/.scripts/poweroptions
 
+#Dunst Options
+super + d
+        ~/.scripts/dunst_options
+
 ctrl + alt + Escape
         systemctl suspend 
 
@@ -199,7 +203,7 @@ ctrl + alt + s
 
 # Launch Thunderbird
 ctrl + alt + m 
-        thunderbird
+        birdtray -t
 
 # Rofi alt-tabbing
 alt + Tab
