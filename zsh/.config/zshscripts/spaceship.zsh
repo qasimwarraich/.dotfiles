@@ -3,7 +3,7 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL=➜
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_NODE_SHOW=false
+SPACESHIP_NODE_SHOW=true
 SPACESHIP_DIR_COLOR=green
 SPACESHIP_CHAR_COLOR_SUCCESS=white
 SPACESHIP_USER_SHOW=always
@@ -24,7 +24,7 @@ SPACESHIP_PROMPT_ORDER=(
   docker        # Docker section
   venv          # virtualenv section
   conda         # conda virtualenv section
-  golang
+  node
   pyenv         # Pyenv section
   exec_time     # Execution time
   line_sep      # Line break
