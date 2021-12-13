@@ -50,6 +50,7 @@ alias cdu="cd /home/spam/Documents/uzh"
 alias cds="cd /home/spam/.scripts"
 alias cdc="cd /home/spam/.config"
 alias cdv="cd /home/spam/Pictures/Vids"
+alias cdV="cd /home/spam/Programming/VKB"
 alias cdP="cd /home/spam/Pictures"
 alias vswaps="cd ~/.local/share/nvim/swap"
 
