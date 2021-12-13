@@ -36,7 +36,8 @@ map <leader>TT :lcd ~/<CR>
 " map <leader>e  :NvimTreeToggle<CR>
 map <leader>x <C-w>q
 map <leader>mp :MarkdownPreview<CR>
-nnoremap <leader>S :Files<CR>
+nnoremap <leader>S :Telescope<CR>
+nnoremap <leader>s :Telescope find_files<CR>
 command! -nargs=* W w " Unbinds :W = :Windows (fzf)
 
 "Moving between windows with h,j,k,l keys
