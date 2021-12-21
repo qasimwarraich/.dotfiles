@@ -111,7 +111,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 mytextclock = wibox.widget.textclock("%a, %d.%m.%y %H:%M:%S ", 1)
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+--
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -220,14 +220,6 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             wibox.widget.textbox(" | "),
             volume_widget(),
-            wibox.widget.textbox(" | "),
-            brightness_widget{
-                type = 'icon_and_text',
-                program = 'xbacklight',
-                step = 10,
-                timeout = 1,
-                font =  "Hack Nerd Font 9"
-            },
             wibox.widget.textbox(" | "),
             mytextclock,
         },

@@ -57,7 +57,8 @@ theme.taglist_fg_focus="#DAA520"
 -- notification_[bg|fg]
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
-
+theme.notification_max_height=50
+theme.notification_max_width=200
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
