@@ -148,6 +148,10 @@ Plug 'neovim/nvim-lspconfig'
 " Nvim Lint
 Plug 'mfussenegger/nvim-lint'
 
+" vim dadbod + dadbodui
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+
 " Fugitive git tool
 Plug 'tpope/vim-fugitive'
 
