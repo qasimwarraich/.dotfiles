@@ -166,6 +166,9 @@ Plug 'sbdchd/neoformat'
 " Bar Bar better tabs
 Plug 'romgrk/barbar.nvim'
 
+" Autopairs
+Plug  'windwp/nvim-autopairs'
+
 " Colour highlight
 Plug 'norcalli/nvim-colorizer.lua'
 
@@ -581,6 +584,9 @@ set completeopt=menu,menuone,noselect
 
 lua <<EOF
   -- Setup nvim-cmp.
+require('nvim-autopairs').setup{
+    fast_wrap = {},
+}
 local lspkind = require('lspkind')
   local cmp = require'cmp'
 
