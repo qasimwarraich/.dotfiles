@@ -175,6 +175,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Prettier errors
 Plug 'folke/lsp-trouble.nvim'
 
+" LSP symbols outline
+Plug 'simrat39/symbols-outline.nvim'
+
 " Nvim DAP
 Plug 'mfussenegger/nvim-dap'
 
