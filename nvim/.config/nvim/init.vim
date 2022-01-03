@@ -160,12 +160,8 @@ Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 
-" Prettier formatter
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-
+" Neoformat
+Plug 'sbdchd/neoformat'
 
 " Bar Bar better tabs
 Plug 'romgrk/barbar.nvim'
@@ -737,7 +733,6 @@ require('gitsigns').setup {
 }
 EOF
 
-let g:prettier#config#tab_width = '2'
 
 
 " lua <<EOF
