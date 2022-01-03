@@ -186,6 +186,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'onsails/lspkind-nvim'
 
 call plug#end()
 
@@ -580,6 +581,7 @@ set completeopt=menu,menuone,noselect
 
 lua <<EOF
   -- Setup nvim-cmp.
+local lspkind = require('lspkind')
   local cmp = require'cmp'
 
   cmp.setup({
@@ -592,6 +594,18 @@ lua <<EOF
         -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
     },
+   formatting = {
+        format = lspkind.cmp_format({
+          with_text = false, -- do not show text alongside icons
+          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          
+          -- The function below will be called before any actual modifications from lspkind
+          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+          before = function (entry, vim_item)
+            return vim_item
+          end
+        })
+      },
     mapping = {
       ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
