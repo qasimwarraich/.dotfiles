@@ -151,6 +151,7 @@ Plug 'mfussenegger/nvim-lint'
 " vim dadbod + dadbodui
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
 
 " Fugitive git tool
 Plug 'tpope/vim-fugitive'
@@ -192,6 +193,8 @@ Plug 'ray-x/lsp_signature.nvim'
 
 call plug#end()
 
+"Dadbod UI config
+let g:db_ui_use_nerd_fonts = 1
 
 "Config pretty error list.
 lua << EOF
@@ -635,7 +638,7 @@ lua <<EOF
   })
 
 EOF
-
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
 
 "Vsnip config
 " NOTE: You can use other key to expand snippet.
