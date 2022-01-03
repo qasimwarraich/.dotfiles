@@ -187,6 +187,9 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+"Harpoon
+Plug 'ThePrimeagen/harpoon'
+
 "Nvim cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -811,4 +814,15 @@ vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''
 require("dapui").setup()
 require("nvim-dap-virtual-text").setup()
 EOF
+
+" Harpoon config 
+nnoremap <leader>H :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>a :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
+lua <<EOF
+require("telescope").load_extension('harpoon')
+
 EOF
