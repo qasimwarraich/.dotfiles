@@ -99,7 +99,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'morhetz/gruvbox'
 
 " Rainbow parenthesis nesting.
-Plug 'luochen1990/rainbow'
+Plug 'p00f/nvim-ts-rainbow'
 
 " VIM FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -433,6 +433,14 @@ require'nvim-treesitter.configs'.setup {
       ["foo.bar"] = "Identifier",
     },
   },
+  rainbow = {
+      enable = true,
+      -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+      extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+      max_file_lines = nil, -- Do not enable for files with more than n lines, int
+      -- colors = {}, -- table of hex strings
+      -- termcolors = {} -- table of colour name strings
+    },
 }
 EOF
 
