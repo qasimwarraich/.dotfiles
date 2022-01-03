@@ -180,6 +180,8 @@ Plug 'simrat39/symbols-outline.nvim'
 
 " Nvim DAP
 Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -289,26 +291,35 @@ fun! GotoWindow(id)
     MaximizerToggle
 endfun
 
-nnoremap <leader>dd :call vimspector#Launch()<CR>
-nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
-nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
-nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
-nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
-nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
-nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
-nnoremap <leader>dq :call vimspector#Reset()<CR>
+" nnoremap <leader>dd :call vimspector#Launch()<CR>
+" nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
+" nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
+" nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
+" nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+" nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
+" nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
+" nnoremap <leader>dq :call vimspector#Reset()<CR>
 
-nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+" nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
 
-nmap <leader>dl <Plug>VimspectorStepInto
-nmap <leader>dj <Plug>VimspectorStepOver
-nmap <leader>dk <Plug>VimspectorStepOut
-nmap <leader>dr <Plug>VimspectorRestart
-nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+" nmap <leader>dl <Plug>VimspectorStepInto
+" nmap <leader>dj <Plug>VimspectorStepOver
+" nmap <leader>dk <Plug>VimspectorStepOut
+" nmap <leader>dr <Plug>VimspectorRestart
+" nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 
-nmap <leader>drc <Plug>VimspectorRunToCursor
-nmap <leader>db <Plug>VimspectorToggleBreakpoint
-nmap <leader>dcb <Plug>VimspectorToggleConditionalBreakpoint
+" nmap <leader>drc <Plug>VimspectorRunToCursor
+" nmap <leader>db <Plug>VimspectorToggleBreakpoint
+" nmap <leader>dcb <Plug>VimspectorToggleConditionalBreakpoint
+
+nnoremap <leader>dd :lua require'dap'.continue()<CR>
+nnoremap <leader>dq :lua require'dap'.terminate()<CR>
+nmap <leader>dl :lua require'dap'.step_into()<CR>
+nmap <leader>dj :lua require'dap'.step_over()<CR>
+nmap <leader>dk :lua require'dap'.step_out()<CR>
+nmap <leader>dr :lua require'dap'.repl.open()<CR>
+nnoremap <leader>d<space> :lua require("dapui").toggle()<CR>
+nmap <leader>db :lua require'dap'.toggle_breakpoint()
 
 
 "VimTex Config
@@ -774,7 +785,7 @@ local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
-  args = {os.getenv('HOME') .. 'Clones/vscode-node-debug2/out/src/nodeDebug.js'},
+  args = {os.getenv('HOME') .. '/Clones/vscode-node-debug2/out/src/nodeDebug.js'},
 }
 dap.configurations.javascript = {
   {
@@ -796,4 +807,8 @@ dap.configurations.javascript = {
   },
 }
 
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+require("dapui").setup()
+require("nvim-dap-virtual-text").setup()
+EOF
 EOF
