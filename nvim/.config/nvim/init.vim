@@ -26,7 +26,7 @@ nnoremap <esc><esc> :noh<return>
 map <F9> :! pdflatex % <CR><CR>
 map <F6> :! makescript % <CR>
 map <F2> :Pydocstring<CR>
-map <C-a> ggVGy<C-o>
+map <C-a> ggVG<C-o>
 map <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
 map <A-z> :Goyo<CR>
@@ -176,7 +176,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/lsp-trouble.nvim'
 
 " LSP symbols outline
-Plug 'simrat39/symbols-outline.nvim'
+" Plug 'simrat39/symbols-outline.nvim'
 
 " Nvim DAP
 Plug 'mfussenegger/nvim-dap'
