@@ -25,6 +25,7 @@ SPACESHIP_PROMPT_ORDER=(
   venv          # virtualenv section
   conda         # conda virtualenv section
   node
+  golang
   pyenv         # Pyenv section
   exec_time     # Execution time
   line_sep      # Line break
