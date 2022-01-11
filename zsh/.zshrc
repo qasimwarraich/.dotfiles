@@ -62,11 +62,13 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 #Import/Export
 path+=('/home/spam/.scripts/')
 path+=('/home/spam/.npm-global/bin')
+path+=('/home/spam/go/bin')
 export NODE_PATH="$HOME/.npm-global/lib/node_modules/"
 export _JAVA_AWT_WM_NONREPARENTING=1 # IDEA hack
 export PATH
 export EDITOR=nvim
 export FZF_DEFAULT_OPTS='--height 42% --no-reverse'
+export XSECURELOCK_NO_COMPOSITE=1
 
 source ~/.config/zshscripts/spaceship.zsh
 source ~/.aliases
