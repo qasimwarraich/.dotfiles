@@ -119,7 +119,7 @@ ctrl + alt + f
         pcmanfm
 
 #Power Options
-super + Escape
+super + shift + Escape
         ~/.scripts/poweroptions
 
 #Dunst Options
@@ -158,7 +158,7 @@ super + shift + s
         st -e bash -c 'nvim ~/.config/sxhkd/sxhkdrc; bash'
 
 #Make display blank 
-super + shift + Escape
+ctrl + shift + Escape
         sleep 0.3s && xset dpms force off
 
 #Make arandr spawn
