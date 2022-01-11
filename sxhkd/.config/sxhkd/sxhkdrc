@@ -15,7 +15,7 @@ Print
 
 # Clipmenu 
 super + Insert
-        clipmenu -x 12 -y 12 -w 1896
+        clipmenu
 
 #Volume stuff
 
@@ -92,7 +92,7 @@ super + F5
 
 #Dmenu Network Manager
 super + shift + w
-        networkmanager_dmenu -x 12 -y 12 -w 1896
+        networkmanager_dmenu 
 
 #Keepassxc
 ctrl + alt + k
