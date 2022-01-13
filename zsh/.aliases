@@ -41,6 +41,7 @@ alias Spam="paru -Slq | fzf -m --preview 'paru -Si {1}' | xargs -ro paru -S"
 alias update="sudo pacman -Syu"
 
 alias ..="cd .."
+alias cd.="cd /home/spam/.dotfiles"
 alias cda="cd /home/spam/.config/awesome/"
 alias cdd="pwd | tr -d '\n' | xsel --clipboard --input"
 alias cdp="cd /home/spam/Programming"
