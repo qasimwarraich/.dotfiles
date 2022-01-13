@@ -49,6 +49,9 @@ nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>> :resize +5<CR>
 nnoremap <Leader>< :resize -5<CR>
+"This feels sexy
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 "Maps a quick function yank for curly braced languages.
 nnoremap yf va{Vy
