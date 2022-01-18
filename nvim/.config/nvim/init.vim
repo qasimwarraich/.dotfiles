@@ -94,8 +94,8 @@ Plug 'tpope/vim-surround'
 " Vim-Commentary Comments Utility
 Plug 'tpope/vim-commentary'
 
-" Vim Airline status bar
-Plug 'vim-airline/vim-airline'
+" Lualine status bar
+Plug 'nvim-lualine/lualine.nvim'
 
 " Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -263,10 +263,7 @@ syntax enable
 colorscheme gruvbox
 
 
-"Airline config
 
-let g:airline#extensions#scrollbar#enabled = 0
-let g:airline_section_c_only_filename = 1
 
 hi Normal guibg=black guifg=white
 hi Signcolumn guibg=black guifg=gold
@@ -832,3 +829,16 @@ lua <<EOF
 require("telescope").load_extension('harpoon')
 
 EOF
+lua << END
+require('lualine').setup({
+    options = { 
+        theme = 'github',
+        section_separators = "",
+        component_separators = ""
+    }, 
+    extensions = {
+        'quickfix',
+        'fugitive'
+        }
+})
+END
