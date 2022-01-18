@@ -816,7 +816,7 @@ dap.configurations.javascript = {
   },
 }
 
-vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 require("dapui").setup()
 require("nvim-dap-virtual-text").setup()
 EOF
