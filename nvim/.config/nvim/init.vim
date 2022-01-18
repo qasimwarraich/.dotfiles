@@ -128,6 +128,9 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 " Sidebar plugin
 Plug 'sidebar-nvim/sidebar.nvim'
 
+" Indent Line
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 " Emmet
 Plug 'mattn/emmet-vim/'
 
@@ -751,4 +754,13 @@ require("sidebar-nvim").setup({
     disable_closing_prompt = false
 })
 
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
 END
