@@ -174,9 +174,6 @@ Plug 'lewis6991/gitsigns.nvim'
 " Neoformat
 Plug 'sbdchd/neoformat'
 
-" Bar Bar better tabs
-Plug 'romgrk/barbar.nvim'
-
 " Autopairs
 Plug  'windwp/nvim-autopairs'
 
