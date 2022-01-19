@@ -23,6 +23,7 @@ set hidden
 "-- Mappings --
 
 nnoremap <esc><esc> :noh<return>
+map <F8> :set nolist!<CR>
 map <C-a> ggVG<C-o>
 map <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
@@ -753,7 +754,7 @@ require("sidebar-nvim").setup({
     disable_closing_prompt = true
 })
 
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
 
@@ -761,5 +762,6 @@ require("indent_blankline").setup {
     space_char_blankline = " ",
     show_current_context = true,
     show_current_context_start = true,
+    disable_with_nolist = true
 }
 END
