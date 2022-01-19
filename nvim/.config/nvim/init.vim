@@ -762,8 +762,9 @@ require("sidebar-nvim").setup({
         attach_shell = "/bin/sh", show_all = true, interval = 5000,
     },
     datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
+    files = { show_hidden = true },
     todos = { ignored_paths = { "~" , "./node_modules/"} },
-    disable_closing_prompt = false
+    disable_closing_prompt = true
 })
 
 vim.opt.list = true
