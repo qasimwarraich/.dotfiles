@@ -186,6 +186,9 @@ Plug 'folke/lsp-trouble.nvim'
 " LSP symbols outline
 " Plug 'simrat39/symbols-outline.nvim'
 
+"Nvim Distant 
+Plug 'chipsenkbeil/distant.nvim'
+
 " Nvim DAP
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
@@ -722,6 +725,15 @@ nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
 lua <<EOF
 require("telescope").load_extension('harpoon')
 
+
+    require('distant').setup {
+      -- Applies Chip's personal settings to every machine you connect to
+      --
+      -- 1. Ensures that distant servers terminate with no connections
+      -- 2. Provides navigation bindings for remote directories
+      -- 3. Provides keybinding to jump into a remote file's parent directory
+      ['*'] = require('distant.settings').chip_default()
+    }
 EOF
 lua << END
 require('lualine').setup({
