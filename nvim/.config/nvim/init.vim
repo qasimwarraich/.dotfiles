@@ -23,17 +23,12 @@ set hidden
 "-- Mappings --
 
 nnoremap <esc><esc> :noh<return>
-map <F9> :! pdflatex % <CR><CR>
-map <F6> :! makescript % <CR>
-map <F2> :Pydocstring<CR>
 map <C-a> ggVG<C-o>
 map <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
 map <A-z> :Goyo<CR>
-" map <leader>t :split \| resize 10 \| term<CR>
 map <leader>t :lcd %:p:h<CR>:split \| resize 10 \| term <CR>
 map <leader>TT :lcd ~/<CR>
-" map <leader>e  :NvimTreeToggle<CR>
 map <leader>x <C-w>q
 map <leader>mp :MarkdownPreview<CR>
 nnoremap <leader>S :Telescope live_grep<CR>
@@ -146,20 +141,20 @@ Plug 'tibabit/vim-templates'
 " VimTex LaTeX
 Plug 'lervag/vimtex'
 
+" Snippets
 Plug 'hrsh7th/vim-vsnip'
-
 Plug 'rafamadriz/friendly-snippets'
 
 " Fire nvim: VIM EVERYWHERE!
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
-"  Nvim LSP
+" Nvim LSP
 Plug 'neovim/nvim-lspconfig'
 
 " Nvim Lint
 Plug 'mfussenegger/nvim-lint'
 
-" vim dadbod + dadbodui
+" Vim dadbod + dadbodui
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
@@ -186,7 +181,7 @@ Plug 'folke/lsp-trouble.nvim'
 " LSP symbols outline
 " Plug 'simrat39/symbols-outline.nvim'
 
-"Nvim Distant 
+" Nvim distant
 Plug 'chipsenkbeil/distant.nvim'
 
 " Nvim DAP
@@ -198,10 +193,10 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-"Harpoon
+" Harpoon
 Plug 'ThePrimeagen/harpoon'
 
-"Nvim cmp
+" Nvim cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -363,7 +358,7 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 " set statusline+=%{FugitiveStatusline()}
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+" set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 
@@ -715,7 +710,7 @@ require("dapui").setup()
 require("nvim-dap-virtual-text").setup()
 EOF
 
-" Harpoon config 
+" Harpoon config
 nnoremap <leader>H :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>a :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
@@ -737,11 +732,11 @@ require("telescope").load_extension('harpoon')
 EOF
 lua << END
 require('lualine').setup({
-    options = { 
+    options = {
         theme = 'github',
         section_separators = "",
         component_separators = ""
-    }, 
+    },
     extensions = {
         'quickfix',
         'fugitive'
