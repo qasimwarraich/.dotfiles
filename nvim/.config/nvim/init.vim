@@ -273,6 +273,8 @@ let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer", "NvimTree"]
 " Change the "hint" color to the "orange" color, and make the "error" color bright red
 let g:github_colors = {
   \ 'hint': 'orange',
+  \ 'bg_search': 'white',
+  \ 'fg_search': 'black',
   \ 'error': '#ff0000'
 \ }
 
