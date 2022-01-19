@@ -190,6 +190,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Harpoon
 Plug 'ThePrimeagen/harpoon'
@@ -713,6 +714,8 @@ nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
 lua <<EOF
 require("telescope").load_extension('harpoon')
+require("telescope").load_extension "file_browser"
+
 require('distant').setup {
   -- Applies Chip's personal settings to every machine you connect to
   --
