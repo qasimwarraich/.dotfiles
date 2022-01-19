@@ -52,6 +52,7 @@ alias cds="cd /home/spam/.scripts"
 alias cdc="cd /home/spam/.config"
 alias cdv="cd /home/spam/Pictures/Vids"
 alias cdV="cd /home/spam/Programming/VKB"
+alias cdT="cd /home/spam/Programming/TESTING"
 alias cdP="cd /home/spam/Pictures"
 alias vswaps="cd ~/.local/share/nvim/swap"
 
