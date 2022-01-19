@@ -129,9 +129,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " Emmet
 Plug 'mattn/emmet-vim/'
 
-" Vim Bracey preview tool
-Plug 'turbio/bracey.vim'
-
 " Vim Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
@@ -249,10 +246,6 @@ map <leader>it :TemplateInit<CR>
 "Vim Emmet config
 let g:user_emmet_leader_key=','
 
-"Bracey config
-let g:bracey_refresh_on_save = 1
-let g:bracey_server_port=8000
-" let g:bracey_server_path="http://localhost"
 
 "Colour Scheme Config
 
