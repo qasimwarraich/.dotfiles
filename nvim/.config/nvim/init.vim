@@ -99,6 +99,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Gruvbox Colour Scheme
 Plug 'morhetz/gruvbox'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'rebelot/kanagawa.nvim'
 
 " Rainbow parenthesis nesting.
 Plug 'p00f/nvim-ts-rainbow'
@@ -272,7 +273,8 @@ let g:github_colors = {
 \ }
 
 " Load the colorscheme
-colorscheme github_dark_default
+colorscheme kanagawa
+" colorscheme github_dark_default
 
 hi Normal guibg=black guifg=white
 hi NormalNC guibg=black guifg=white
@@ -728,7 +730,7 @@ EOF
 lua << END
 require('lualine').setup({
     options = {
-        theme = 'github',
+        theme = 'kanagawa',
         section_separators = "",
         component_separators = ""
     },
