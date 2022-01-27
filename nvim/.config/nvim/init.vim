@@ -8,6 +8,7 @@ set tabstop=4 shiftwidth=4 expandtab
 set clipboard=unnamedplus
 set splitbelow splitright
 set scrolloff=8
+set updatetime=300
 " set laststatus=2
 let mapleader = "\<Space>"
 " let g:python3_host_prog = '/home/spam/Clones/py3nvim/bin/python'
@@ -397,9 +398,6 @@ require'lsp_signature'.on_attach({hi_parameter = "IncSearch"})
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=DarkCyan
-      hi LspReferenceText cterm=bold ctermbg=red guibg=DarkCyan
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=DarkCyan
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
