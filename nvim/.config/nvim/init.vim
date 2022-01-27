@@ -37,6 +37,7 @@ nnoremap <leader>S :Telescope live_grep<CR>
 nnoremap <leader>s :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>p :Telescope <CR>
+nnoremap <leader>E :Telescope file_browser <CR>
 command! -nargs=* W w " Unbinds :W = :Windows (fzf)
 
 "Moving between windows with h,j,k,l keys
