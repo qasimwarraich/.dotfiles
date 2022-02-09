@@ -110,7 +110,6 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock("%a, %Y-%m-%d %H:%M:%S ", 1)
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 --
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
