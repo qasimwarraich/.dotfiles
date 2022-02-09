@@ -70,6 +70,10 @@ export EDITOR=nvim
 export FZF_DEFAULT_OPTS='--height 42% --no-reverse'
 export XSECURELOCK_NO_COMPOSITE=1
 
+export PYENV_ROOT="/home/spam/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 source ~/.config/zshscripts/spaceship.zsh
 source ~/.aliases
 source /usr/share/fzf/completion.zsh
