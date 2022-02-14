@@ -204,6 +204,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-omni'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'onsails/lspkind-nvim'
@@ -508,6 +509,7 @@ local lspkind = require('lspkind')
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'omni' },
       { name = 'vsnip' }, -- For vsnip users.
       { name = 'buffer' },
       -- { name = 'luasnip' }, -- For luasnip users.
