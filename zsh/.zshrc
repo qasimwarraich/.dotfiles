@@ -70,6 +70,8 @@ export PATH
 export EDITOR=nvim
 export FZF_DEFAULT_OPTS='--height 42% --no-reverse'
 export XSECURELOCK_NO_COMPOSITE=1
+export ZSH_ALIAS_FINDER_AUTOMATIC=true
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 source ~/.config/zshscripts/spaceship.zsh
 source ~/.aliases
@@ -78,8 +80,6 @@ source /usr/share/fzf/key-bindings.zsh
 
 #Plugins
 source ~/.config/zshscripts/alias-finder.zsh
-ZSH_ALIAS_FINDER_AUTOMATIC=true
-ZSH_AUTOSUGGEST_USE_ASYNC=true
 source /usr/share/nvm/init-nvm.sh
 
 # The next line updates PATH for the Google Cloud SDK.
