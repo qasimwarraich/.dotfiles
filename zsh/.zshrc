@@ -82,6 +82,7 @@ source /usr/share/fzf/key-bindings.zsh
 #Plugins
 source ~/.config/zshscripts/alias-finder.zsh
 ZSH_ALIAS_FINDER_AUTOMATIC=true
+ZSH_AUTOSUGGEST_USE_ASYNC=true
 source /usr/share/nvm/init-nvm.sh
 
 # The next line updates PATH for the Google Cloud SDK.
