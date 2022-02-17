@@ -189,6 +189,7 @@ Plug 'chipsenkbeil/distant.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'mfussenegger/nvim-dap-python'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -645,7 +646,7 @@ EOF
 " EOF
 " au InsertLeave *.md lua require('lint').try_lint()
 
-
+lua require('dap-python').setup('/home/spam/miniconda3/envs/debugpy/bin/python')
 
 lua <<EOF
 
