@@ -1,4 +1,5 @@
 SPACESHIP_HOST_SHOW=always
+SPACESHIP_TIME_SHOW=true
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL=➜
 SPACESHIP_CHAR_SUFFIX=" "
@@ -22,11 +23,11 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
   docker        # Docker section
-  venv          # virtualenv section
+  # venv          # virtualenv section
+  # gcloud
   conda         # conda virtualenv section
   node
   golang
-  pyenv         # Pyenv section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
