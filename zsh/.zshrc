@@ -42,7 +42,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
 #Import/Export
-fpath=("$HOME/.config/zsh_config/zprompts" "$fpath[@]")
 path+=('/home/spam/.scripts/')
 path+=('/home/spam/.npm-global/bin')
 path+=('/home/spam/go/bin')
@@ -65,10 +64,6 @@ source ~/.config/zsh_config/alias-finder.zsh
 source ~/.config/zsh_config/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/spam/.config/zsh_config/fzf-tab/fzf-tab.plugin.zsh
 source /home/spam/.config/zsh_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#Prompt
-autoload -U promptinit; promptinit
-prompt spaceship
 
 # source /usr/share/nvm/init-nvm.sh (SLOWS PROMPT)
 
