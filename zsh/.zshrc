@@ -33,26 +33,6 @@ function zle-keymap-select {
 zle -N zle-keymap-select
 
 
-#zplug plugin manager
-#source ~/.zplug/init.zsh
-#zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-
-#zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-#zplug "zsh-users/zsh-autosuggestions"
-
-#zplug "Aloxaf/fzf-tab"
-
-## Install plugins if there are plugins that have not been installed
-#if ! zplug check --verbose; then
-#    printf "Install? [y/N]: "
-#    if read -q; then
-#        echo; zplug install
-#    fi
-#fi
-
-##Then, source plugins and add commands to $PATH
-#zplug load
 
 
 #autosuggest config
@@ -84,6 +64,10 @@ source ~/.config/zsh_config/alias-finder.zsh
 source ~/.config/zsh_config/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/spam/.config/zsh_config/fzf-tab/fzf-tab.plugin.zsh
 source /home/spam/.config/zsh_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#Prompt
+autoload -U promptinit; promptinit
+prompt spaceship
 
 # source /usr/share/nvm/init-nvm.sh (SLOWS PROMPT)
 
