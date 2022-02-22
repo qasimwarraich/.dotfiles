@@ -34,25 +34,26 @@ zle -N zle-keymap-select
 
 
 #zplug plugin manager
-source ~/.zplug/init.zsh
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+#source ~/.zplug/init.zsh
+#zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-zplug "zsh-users/zsh-autosuggestions"
+#zplug "zsh-users/zsh-autosuggestions"
 
-zplug "Aloxaf/fzf-tab"
+#zplug "Aloxaf/fzf-tab"
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+## Install plugins if there are plugins that have not been installed
+#if ! zplug check --verbose; then
+#    printf "Install? [y/N]: "
+#    if read -q; then
+#        echo; zplug install
+#    fi
+#fi
 
-#Then, source plugins and add commands to $PATH
-zplug load
+##Then, source plugins and add commands to $PATH
+#zplug load
+
 
 #autosuggest config
 bindkey '^ ' autosuggest-accept
@@ -61,6 +62,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
 #Import/Export
+fpath=("$HOME/.config/zsh_config/zprompts" "$fpath[@]")
 path+=('/home/spam/.scripts/')
 path+=('/home/spam/.npm-global/bin')
 path+=('/home/spam/go/bin')
@@ -73,17 +75,26 @@ export XSECURELOCK_NO_COMPOSITE=1
 export ZSH_ALIAS_FINDER_AUTOMATIC=true
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-source ~/.config/zshscripts/spaceship.zsh
+source ~/.config/zsh_config/spaceship_conf.zsh
 source ~/.aliases
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 #Plugins
-source ~/.config/zshscripts/alias-finder.zsh
-source /usr/share/nvm/init-nvm.sh
+source ~/.config/zsh_config/alias-finder.zsh
+source ~/.config/zsh_config/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/spam/.config/zsh_config/fzf-tab/fzf-tab.plugin.zsh
+source /home/spam/.config/zsh_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# source /usr/share/nvm/init-nvm.sh (SLOWS PROMPT)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/spam/Clones/google-cloud-sdk/path.zsh.inc' ]; then . '/home/spam/Clones/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+#Prompt
+autoload -U promptinit; promptinit
+prompt spaceship
