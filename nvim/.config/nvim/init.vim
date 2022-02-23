@@ -162,6 +162,8 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 
 " Fugitive git tool
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " Git gutter tool
 " Plug 'airblade/vim-gitgutter'
