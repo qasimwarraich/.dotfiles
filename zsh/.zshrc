@@ -65,10 +65,6 @@ source ~/.config/zsh_config/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/spam/.config/zsh_config/fzf-tab/fzf-tab.plugin.zsh
 source /home/spam/.config/zsh_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#Prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-
 # source /usr/share/nvm/init-nvm.sh (SLOWS PROMPT)
 
 # The next line updates PATH for the Google Cloud SDK.
