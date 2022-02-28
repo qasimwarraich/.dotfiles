@@ -540,7 +540,6 @@ local lspkind = require('lspkind')
 
 EOF
 autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
-
 autocmd FileType tex lua require('cmp').setup.buffer { sources = { { name = 'omni' } } }
 "Vsnip config
 " NOTE: You can use other key to expand snippet.
@@ -794,3 +793,5 @@ require("indent_blankline").setup {
     disable_with_nolist = true
 }
 END
+
+let g:gitlab_api_keys = {'gitlab.com': $GLPAT}
