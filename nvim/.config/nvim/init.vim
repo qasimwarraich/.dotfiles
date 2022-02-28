@@ -512,7 +512,7 @@ local lspkind = require('lspkind')
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'omni' },
+      -- { name = 'omni' },
       { name = 'vsnip' }, -- For vsnip users.
       { name = 'buffer' },
       -- { name = 'luasnip' }, -- For luasnip users.
@@ -542,6 +542,7 @@ local lspkind = require('lspkind')
 EOF
 autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
 
+autocmd FileType tex lua require('cmp').setup.buffer { sources = { { name = 'omni' } } }
 "Vsnip config
 " NOTE: You can use other key to expand snippet.
 
