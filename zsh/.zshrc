@@ -45,6 +45,8 @@ fpath=("$HOME/.config/zsh_config/zprompts" "$fpath[@]")
 path+=('/home/spam/.scripts/')
 path+=('/home/spam/.npm-global/bin')
 path+=('/home/spam/go/bin')
+path+=('/home/spam/.local/share/gem/ruby/3.0.0/bin')
+
 export NODE_PATH="$HOME/.npm-global/lib/node_modules/"
 export _JAVA_AWT_WM_NONREPARENTING=1 # IDEA hack
 export PATH
