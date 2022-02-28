@@ -641,12 +641,19 @@ EOF
 
 
 
-" lua <<EOF
-" require('lint').linters_by_ft = {
-"   markdown = {'vale', 'markdownlint'}
-" }
-" EOF
-" au InsertLeave *.md lua require('lint').try_lint()
+lua <<EOF
+require('lint').linters_by_ft = {
+    markdown = {'vale', 'markdownlint'},
+    python = {'flake8', 'pylint'},
+    c = {'clang-tidy'},
+    cpp = {'clang-tidy'},
+    sh = {'shellcheck'},
+    bash = {'shellcheck'},
+}
+EOF
+
+au InsertLeave *.* lua require('lint').try_lint()
+
 
 lua require('dap-python').setup('/home/spam/miniconda3/envs/debugpy/bin/python')
 
