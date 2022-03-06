@@ -153,6 +153,9 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Nvim LSP
 Plug 'neovim/nvim-lspconfig'
 
+" go.nvim
+Plug 'ray-x/go.nvim'
+
 " Nvim Lint
 Plug 'mfussenegger/nvim-lint'
 
@@ -422,6 +425,20 @@ EOF
 
 
 lua << EOF
+require 'go'.setup({
+  goimport = 'gopls', -- if set to 'gopls' will use golsp format
+  gofmt = 'gopls', -- if set to gopls will use golsp format
+  max_line_len = 120,
+  tag_transform = false,
+  test_dir = '',
+  comment_placeholder = '   ',
+  lsp_cfg = true, -- false: use your own lspconfig
+  lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
+  lsp_on_attach = true, -- use on_attach from go.nvim
+  dap_debug = true,
+})
+
+local protocol = require'vim.lsp.protocol'
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
@@ -541,7 +558,8 @@ local lspkind = require('lspkind')
 
 EOF
 autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
-autocmd FileType tex lua require('cmp').setup.buffer { sources = { { name = 'omni' } } }
+autocmd FileType tex lua require('cmp').setup.buffer { sources = { { name = 'omni' }, { name = 'nvim_lsp' }, { name = 'vsnip' }, { name = 'buffer' } }}
+
 "Vsnip config
 " NOTE: You can use other key to expand snippet.
 
