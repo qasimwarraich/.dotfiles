@@ -20,25 +20,21 @@ bindkey "^?" backward-delete-char
 
 #vimode: Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+    if [[ ${KEYMAP} == vicmd ]] ||
+        [[ $1 = 'block' ]]; then
+        echo -ne '\e[1 q'
+    elif [[ ${KEYMAP} == main ]] ||
+        [[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} = '' ]] ||
+        [[ $1 = 'beam' ]]; then
+        echo -ne '\e[5 q'
+    fi
 }
 zle -N zle-keymap-select
-
-
-
 
 #autosuggest config
 bindkey '^ ' autosuggest-accept
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
 
 #Import/Export
 fpath=("$HOME/.config/zsh_config/zprompts" "$fpath[@]")
@@ -75,7 +71,7 @@ if [ -f '/home/spam/Clones/google-cloud-sdk/path.zsh.inc' ]; then . '/home/spam/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc'; fi
 
-
 #Prompt
-autoload -U promptinit; promptinit
+autoload -U promptinit
+promptinit
 prompt spaceship
