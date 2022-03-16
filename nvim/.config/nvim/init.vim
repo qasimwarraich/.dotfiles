@@ -350,7 +350,7 @@ nmap <leader>db :lua require'dap'.toggle_breakpoint()
 
 
 "VimTex Config
-let g:vimtex_latexmk_progname='/home/spam/.local/bin/nvr'
+" let g:vimtex_latexmk_progname='/home/spam/.local/bin/nvr'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_compiler_latexmk = {
