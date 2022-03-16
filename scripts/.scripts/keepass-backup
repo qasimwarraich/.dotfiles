@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+SOURCE="/home/spam/Wolkig/Keepassxc/Passwords.kdbx"
+SOURCE1="/home/spam/VKB-Wolkig/Passwörter/IT-Passwords.kdbx"
+TARGET="/home/spam/Documents/backups/Keepass-backups/"
+
+cp $SOURCE $TARGET 
+cp $SOURCE1 $TARGET 
+
+cd $TARGET 
+
+sed -ni '' date && date --rfc-3339=seconds >> date
+
+git add .
+
+git commit -m "Keepass backup [Laptop]: $(date --rfc-3339=seconds)"
+
+git push 

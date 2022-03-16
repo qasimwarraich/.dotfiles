@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+OPT=$(echo -e "Blank-Screen\nLock-Screen\nExit\nSuspend\nReboot\nShutdown\nCancel" | dmenu -i -l 6 -c -bw 4 -p "Power Options:")
+
+case $OPT in
+        # Lock-Screen) betterlockscreen -l -t "Enter Your Password";;
+        Blank-Screen) xset dpms force off;;
+        Lock-Screen) xsecurelock;;
+        Exit) xdotool key ctrl+super+x ;;
+        Suspend) systemctl suspend ;;
+        Reboot) reboot ;;
+        Shutdown) shutdown now ;;
+        *) ;; 
+esac 

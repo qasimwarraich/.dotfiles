@@ -1,0 +1,11 @@
+#!/bin/sh
+
+OPT=$(echo -e "Mirror\nRight\nLeft\nCancel" | dmenu -i -l 4 -c -bw 4 -p "Select HDMI configuration:")
+
+case $OPT in
+        Mirror) xrandr --output eDP1 --preferred --pos 0x0 --output HDMI-1-0 --mode 1920x1080 --same-as eDP1;;
+        Right) xrandr --output eDP1 --preferred --pos 0x0 --output HDMI-1-0 --mode 1920x1080 --right-of eDP1;;
+        Left) xrandr --output eDP1 --preferred --pos 0x0 --output HDMI-1-0 --mode 1920x1080 --left-of eDP1;;
+        *) ;; 
+esac
+
