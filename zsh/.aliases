@@ -65,6 +65,8 @@ alias arc="$EDITOR ~/.aliases"
 alias prc="$EDITOR ~/.config/zshscripts/spaceship.zsh"
 alias shortcuts="nvim ~/.config/sxhkd/sxhkdrc"
 
+alias ta='tmux a'
+alias ts='tmux-sessionizer'
 alias tkill="tmux kill-session"
 alias evpn="ethvpn connect sslvpn.ethz.ch/student-net"
 alias dvpn="ethvpn disconnect"
