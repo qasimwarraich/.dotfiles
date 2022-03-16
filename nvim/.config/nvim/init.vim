@@ -29,7 +29,7 @@ map <C-a> ggVG<C-o>
 map <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
 map <A-z> :Goyo<CR>
-map <leader>t :lcd %:p:h<CR>:split \| resize 10 \| term <CR>
+" map <leader>t :lcd %:p:h<CR>:split \| resize 10 \| term <CR>
 map <leader>TT :lcd ~/<CR>
 map <leader>x <C-w>q
 map <leader>mp :MarkdownPreview<CR>
@@ -783,6 +783,7 @@ nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
 nnoremap <leader>5 :lua require("harpoon.ui").nav_file(5)<CR>
+nnoremap <leader>t :lua require("harpoon.term").gotoTerminal(1)<CR>             
 lua <<EOF
 require("telescope").load_extension('harpoon')
 require("telescope").load_extension "file_browser"
