@@ -417,7 +417,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "tsserver", "clangd", 'vimls', 'html', 'cssls','intelephense', 'sumneko_lua', 'dockerls', 'metals' }
+local servers = { "pyright", "jedi_language_server", "rust_analyzer", "tsserver", "clangd", 'vimls', 'html', 'cssls','intelephense', 'sumneko_lua', 'dockerls', 'metals', 'ansiblels','texlab', 'ltex'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -694,6 +694,8 @@ require('lint').linters_by_ft = {
     cpp = {'clang-tidy'},
     sh = {'shellcheck'},
     bash = {'shellcheck'},
+    yml = {'yamllint'},
+    yaml = {'yamllint'},
 }
 EOF
 
