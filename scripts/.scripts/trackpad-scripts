@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Sensitivity
+xinput set-prop 'Synaptics TM3418-002' 343 0.420
+
+# Natural Scrolling
+xinput set-prop 'Synaptics TM3418-002' 331 1
+
+# Tap to click 
+xinput set-prop 'Synaptics TM3418-002' 323 1
+
+
