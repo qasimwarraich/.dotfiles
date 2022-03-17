@@ -65,7 +65,7 @@ alias arc="$EDITOR ~/.aliases"
 alias prc="$EDITOR ~/.config/zshscripts/spaceship.zsh"
 alias shortcuts="nvim ~/.config/sxhkd/sxhkdrc"
 
-alias ta='tmux a'
+alias ta='tmux a || tmux'
 alias ts='tmux-sessionizer'
 alias ts.='ts $(pwd)'
 alias tkill="tmux kill-session"
