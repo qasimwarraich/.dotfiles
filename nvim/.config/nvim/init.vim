@@ -94,6 +94,9 @@ call plug#begin('~/.config/nvim')
 " Surrounding objects tool
 Plug 'tpope/vim-surround'
 
+" Project management
+Plug 'tpope/vim-projectionist'
+
 " Vim-Commentary Comments Utility
 Plug 'tpope/vim-commentary'
 
@@ -202,6 +205,10 @@ Plug 'chipsenkbeil/distant.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
+
+"Vim testing
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
