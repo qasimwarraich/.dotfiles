@@ -1,5 +1,6 @@
 syntax on
 set smartindent
+set shortmess-=F
 set nu
 set relativenumber
 set mouse=a
