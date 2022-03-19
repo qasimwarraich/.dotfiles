@@ -72,6 +72,9 @@ au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
 
 "sxhkdrc file save runs restart command
 autocmd BufWritePost .config/sxhkd/sxhkdrc :silent !sxhkd-restart
+"
+"Lightbulb
+autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
 "testing auto cd for term
 map <leader>T :call Spam()<CR>
@@ -185,6 +188,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " Prettier errors
 Plug 'folke/lsp-trouble.nvim'
+
+" Lightbulb
+Plug 'kosayoda/nvim-lightbulb'
 
 " LSP symbols outline
 " Plug 'simrat39/symbols-outline.nvim'
