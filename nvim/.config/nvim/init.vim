@@ -26,7 +26,7 @@ set hidden
 
 nnoremap <esc><esc> :noh<return>
 map <F8> :set nolist!<CR>
-map <C-a> ggVG<C-o>
+map <C-A> ggVG<C-o>
 map <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
 map <A-z> :Goyo<CR>
