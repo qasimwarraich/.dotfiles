@@ -129,14 +129,6 @@ super + d
 ctrl + alt + Escape
         systemctl suspend 
 
-#Tray
-super + shift + t
-        ~/.scripts/tray
-
-#Kill the tray
-ctrl + alt + t
-        ~/.scripts/traykill
-
 #Bluetooth
 super + shift + b
         blueman-applet
