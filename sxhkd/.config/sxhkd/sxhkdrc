@@ -106,7 +106,7 @@ super + e
         ~/.scripts/emoji-dmenu
 
 #Discord
-super + v 
+super + shift + d 
         discord
 
 #Weather
@@ -152,10 +152,6 @@ XF86Favorites
 #Qalculate alias launch
 super + shift + c 
         qalculate-gtk
-
-#Shortcut to this file
-super + shift + s 
-        st -e bash -c 'nvim ~/.config/sxhkd/sxhkdrc; bash'
 
 #Make display blank 
 ctrl + shift + Escape
