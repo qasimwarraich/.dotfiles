@@ -379,9 +379,11 @@ dap.defaults.fallback.force_external_terminal = true
 dap.defaults.fallback.focus_terminal = true
 EOF
 
+
 "VimTex Config
 " let g:vimtex_latexmk_progname='/home/spam/.local/bin/nvr'
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -636,8 +638,7 @@ tabnine:setup({
 
 EOF
 autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
-autocmd FileType tex lua require('cmp').setup.buffer { sources = { { name = 'omni' }, { name = 'nvim_lsp' }, { name = 'vsnip' }, { name = 'buffer' } }}
-
+autocmd FileType tex lua require('cmp').setup.buffer({ sources = { { name = 'omni' }, { name = 'nvim_lsp' }  }})
 "Vsnip config
 " NOTE: You can use other key to expand snippet.
 
