@@ -163,6 +163,8 @@ Plug 'neovim/nvim-lspconfig'
 
 " go.nvim
 Plug 'ray-x/go.nvim'
+Plug 'ray-x/guihua.lua'  
+Plug 'leoluz/nvim-dap-go'
 
 " Nvim Lint
 Plug 'mfussenegger/nvim-lint'
@@ -364,6 +366,16 @@ nnoremap <leader>d<space> :lua require("dapui").toggle()<CR>
 nmap <leader>db :lua require'dap'.toggle_breakpoint()
 
 
+lua << EOF
+local dap = require('dap')
+dap.defaults.fallback.external_terminal = {
+    command = '/usr/bin/alacritty';
+    args = {'-e'};
+    }
+dap.defaults.fallback.force_external_terminal = true
+dap.defaults.fallback.focus_terminal = true
+EOF
+
 "VimTex Config
 " let g:vimtex_latexmk_progname='/home/spam/.local/bin/nvr'
 let g:vimtex_view_method = 'zathura'
@@ -450,8 +462,15 @@ require 'go'.setup({
   lsp_cfg = true, -- false: use your own lspconfig
   lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
   lsp_on_attach = true, -- use on_attach from go.nvim
+  lsp_diag_virtual_text = { space = 0, prefix = "" },
+  lsp_diag_signs = true,
+  test_runner = 'go',
   dap_debug = true,
+  dap_debug_keymap = false,
+  run_in_floaterm = true,
 })
+
+-- require('dap-go').setup()
 
 local protocol = require'vim.lsp.protocol'
 
