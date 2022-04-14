@@ -739,10 +739,10 @@ EOF
 
 lua <<EOF
 require('lint').linters_by_ft = {
-    markdown = {'vale', 'markdownlint'},
+    markdown = {'markdownlint'},
     python = {'flake8', 'pylint'},
-    c = {'clang-tidy'},
-    cpp = {'clang-tidy'},
+   --  c = {'clang-tidy',},
+   --  cpp = {'clang-tidy'},
     sh = {'shellcheck'},
     bash = {'shellcheck'},
     yml = {'yamllint'},
