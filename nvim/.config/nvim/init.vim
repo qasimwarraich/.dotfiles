@@ -10,6 +10,7 @@ set clipboard=unnamedplus
 set splitbelow splitright
 set scrolloff=8
 set updatetime=300
+set title
 " set laststatus=2
 let mapleader = "\<Space>"
 " let g:python3_host_prog = '/home/spam/Clones/py3nvim/bin/python'
