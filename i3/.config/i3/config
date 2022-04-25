@@ -189,6 +189,7 @@ set $gray     "#2F343A"
 # finds out, if available)
 bar {
     # position top
+    tray_output DP-2
     colors {
         background #000000
             statusline #FFFFFF
