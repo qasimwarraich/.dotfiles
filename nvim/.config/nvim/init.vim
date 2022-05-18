@@ -27,7 +27,7 @@ set hidden
 
 nnoremap <esc><esc> :noh<return>
 map <F8> :set nolist!<CR>
-map <C-A> ggVG<C-o>
+" map <C-A> ggVG<C-o>
 map <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
 map <A-z> :Goyo<CR>
@@ -369,15 +369,15 @@ nnoremap <leader>d<space> :lua require("dapui").toggle()<CR>
 nmap <leader>db :lua require'dap'.toggle_breakpoint()
 
 
-lua << EOF
-local dap = require('dap')
-dap.defaults.fallback.external_terminal = {
-    command = '/usr/bin/alacritty';
-    args = {'-e'};
-    }
-dap.defaults.fallback.force_external_terminal = true
-dap.defaults.fallback.focus_terminal = true
-EOF
+" lua << EOF
+" local dap = require('dap')
+" dap.defaults.fallback.external_terminal = {
+"     command = '/usr/bin/alacritty';
+"     args = {'-e'};
+"     }
+" dap.defaults.fallback.force_external_terminal = true
+" dap.defaults.fallback.focus_terminal = true
+" EOF
 
 
 "VimTex Config
@@ -474,6 +474,9 @@ require 'go'.setup({
   dap_debug_keymap = false,
   run_in_floaterm = true,
 })
+
+-- Run gofmt on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)
 
 -- require('dap-go').setup()
 
