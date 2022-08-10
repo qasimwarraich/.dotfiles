@@ -451,7 +451,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "pyright", "jedi_language_server", "rust_analyzer", "tsserver", "clangd", 'vimls', 'html', 'cssls','intelephense', 'sumneko_lua', 'dockerls', 'metals', 'ansiblels','texlab', 'ltex'}
+local servers = { "pyright", "jedi_language_server", "rust_analyzer", "tsserver", "clangd", 'vimls', 'html', 'cssls','intelephense', 'sumneko_lua', 'dockerls', 'metals', 'ansiblels','texlab', 'ltex', 'svelte'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -477,8 +477,10 @@ require 'go'.setup({
   run_in_floaterm = true,
 })
 
--- Run gofmt on save
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)
+-- Run gofmt + goimport on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+-- Run Neoformat on svelte
+vim.api.nvim_exec([[ autocmd BufWritePre *.svelte :Neoformat<CR>]], false)
 
 -- require('dap-go').setup()
 
@@ -901,3 +903,5 @@ require("indent_blankline").setup {
 END
 
 let g:gitlab_api_keys = {'gitlab.com': $GLPAT}
+
+let g:ultest_deprecation_notice = 0
