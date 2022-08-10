@@ -28,9 +28,6 @@ set hidden
 
 nnoremap <esc><esc> :noh<return>
 map <F8> :set nolist!<CR>
-" map <C-A> ggVG<C-o>
-map <C-s> :w<CR>
-imap <C-s> <ESC>:w<CR>
 map <A-z> :Goyo<CR>
 " map <leader>t :lcd %:p:h<CR>:split \| resize 10 \| term <CR>
 map <leader>TT :lcd ~/<CR>
@@ -42,6 +39,7 @@ nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>p :Telescope <CR>
 nnoremap <leader>E :Telescope file_browser <CR>
 nnoremap <leader>L :lua require('lint').try_lint()<CR>
+nnoremap <leader>F :Neoformat<CR>
 command! -nargs=* W w " Unbinds :W = :Windows (fzf)
 
 "Moving between windows with h,j,k,l keys
