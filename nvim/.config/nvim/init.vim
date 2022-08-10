@@ -186,6 +186,9 @@ Plug 'lewis6991/gitsigns.nvim'
 " Neoformat
 Plug 'sbdchd/neoformat'
 
+" Undotree
+Plug 'mbbill/undotree' 
+
 " Autopairs
 Plug  'windwp/nvim-autopairs'
 
