@@ -306,11 +306,11 @@ let g:github_colors = {
 colorscheme kanagawa
 " colorscheme github_dark_default
 
-hi Normal guibg=black
-hi NormalNC guibg=black
-hi Pmenu guibg=black
-hi Signcolumn guibg=black guifg=gold
-hi Linenr guibg=black guifg=gold
+hi Normal guibg=NONE
+hi NormalNC guibg=NONE
+hi Pmenu guibg=NONE
+hi Signcolumn guibg=NONE guifg=gold
+hi Linenr guibg=NONE guifg=gold
 
 " hi Normal guibg=#0c0c0c guifg=white
 " hi Signcolumn guibg=#0c0c0c guifg=gold
