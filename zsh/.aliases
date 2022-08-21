@@ -103,8 +103,9 @@ alias sttray="stalonetray --icon-size=16  -d none --grow-gravity E --geometry 1X
 alias rssh="rofi -show ssh"
 
 # Helpful funcitons 
-vs(){ du -a ~/ | awk '{print $2}' | fzf | xargs -r $EDITOR;}
-zs(){ find ~/ -name "*.pdf" | fzf -m | xargs -d '\n' -r zathura;}
-cs(){ cd "$(find ~/ -type d |  fzf)";} 
-CS(){ cd "$(find ~/ -type d | grep Programming | fzf)";} 
+os(){ fd . ~/ -Hc always | fzf -m --ansi | xargs -d '\n' -r xdg-open;}
+vs(){ fd . ~/ -Hc always | fzf -m --ansi | xargs -r $EDITOR;}
+zs(){ fd . ~/ -e "pdf" -Hc always  | fzf -m --ansi | xargs -d '\n' -r zathura;}
+cs(){ cd "$(fd -H -c always -t d | fzf --ansi)" || exit;}
+CS(){ cd "$(fd  . ~/Programming -H -c always -t d | fzf --ansi)" || exit ;}
 
