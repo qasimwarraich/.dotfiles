@@ -73,6 +73,4 @@ if [ -f '/home/spam/Clones/google-cloud-sdk/path.zsh.inc' ]; then . '/home/spam/
 if [ -f '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc'; fi
 
 #Prompt
-autoload -U promptinit
-promptinit
-prompt spaceship
+eval "$(starship init zsh)"
