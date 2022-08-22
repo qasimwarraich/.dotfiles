@@ -21,7 +21,7 @@ style = "bold #54b7bd"
 truncation_length = 100
 
 [git_branch]
-format = "[[git:\\(](bold #5041ad)$branch[\\)](bold #5041ad)(:$remote_branch)]($style) " 
+format = "[git:](bold #5041ad)[$branch(:$remote_branch)]($style) " 
 style = "bold red"
 
 [git_status]
