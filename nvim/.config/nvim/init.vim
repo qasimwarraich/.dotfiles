@@ -615,6 +615,7 @@ local lspkind = require('lspkind')
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
+	mapping = cmp.mapping.preset.cmdline({}),   -- This line
     sources = {
       { name = 'buffer' }
     }
@@ -622,6 +623,7 @@ local lspkind = require('lspkind')
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline({}),   -- This line
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
