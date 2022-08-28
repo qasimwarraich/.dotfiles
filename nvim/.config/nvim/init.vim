@@ -862,16 +862,66 @@ require('distant').setup {
 }
 EOF
 lua << END
+local colors = {
+  black        = '#303030',
+  white        = '#ebdbb2',
+  red          = '#fb4934',
+  green        = '#b8bb26',
+  blue         = '#83a598',
+  yellow       = '#fe8019',
+  gray         = '#a89984',
+  darkgray     = '#3c3836',
+  lightgray    = '#504945',
+  inactivegray = '#7c6f64',
+}
+local theme = {
+  normal = {
+    a = {bg = colors.black, fg = colors.white},
+    b = {bg = colors.black, fg = colors.white},
+    c = {bg = colors.black, fg = colors.white}
+  },
+  insert = {
+    a = {bg = colors.black, fg = colors.white},
+    b = {bg = colors.black, fg = colors.white},
+    c = {bg = colors.black, fg = colors.white}
+  },
+  visual = {
+    a = {bg = colors.black, fg = colors.white},
+    b = {bg = colors.black, fg = colors.white},
+    c = {bg = colors.black, fg = colors.white}
+  },
+  replace = {
+    a = {bg = colors.black, fg = colors.white},
+    b = {bg = colors.black, fg = colors.white},
+    c = {bg = colors.black, fg = colors.white}
+  },
+  command = {
+    a = {bg = colors.black, fg = colors.white},
+    b = {bg = colors.black, fg = colors.white},
+    c = {bg = colors.black, fg = colors.white}
+  },
+  inactive = {
+    a = {bg = colors.black, fg = colors.white},
+    b = {bg = colors.black, fg = colors.white},
+    c = {bg = colors.black, fg = colors.white}
+  }
+}
 require('lualine').setup({
     options = {
-        theme = 'kanagawa',
+        theme = theme,
         section_separators = "",
         component_separators = ""
     },
+    sections = {
+        lualine_a = { 'filename' },
+        lualine_c = {},
+
+        },
     extensions = {
         'quickfix',
         'fugitive'
         }
+
 })
 
 require("sidebar-nvim").setup({
