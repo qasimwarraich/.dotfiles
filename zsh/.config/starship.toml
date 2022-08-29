@@ -2,6 +2,9 @@
 
 add_newline = true
 
+[line_break]
+disabled = true
+
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
@@ -27,6 +30,9 @@ style = "bold red"
 [git_status]
 style = "bold yellow"
 format = '([$all_status$ahead_behind]($style) )'
+
+[conda]
+style = "bold red"
 
 [scala]
 disabled = true
