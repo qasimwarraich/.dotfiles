@@ -646,7 +646,8 @@ tabnine:setup({
 
 EOF
 autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
-autocmd FileType tex lua require('cmp').setup.buffer({ sources = { { name = 'omni' }, { name = 'nvim_lsp' }, { name = 'vsnip' }, }})
+autocmd FileType tex lua require('cmp').setup.buffer({ sources = { { name = 'omni' }, { name = 'nvim_lsp' }, { name = 'cmp_tabnine'}, { name = 'vsnip' }, { name = 'buffer'}, }})
+      
       
 "Vsnip config
 " NOTE: You can use other key to expand snippet.
