@@ -69,12 +69,6 @@ alias ts.='ts $(pwd)'
 alias tkill="tmux kill-session"
 alias evpn="ethvpn connect sslvpn.ethz.ch/student-net"
 alias dvpn="ethvpn disconnect"
-alias spambook="ssh Qasim@192.168.1.107"
-alias desk-remote="ssh  -p 42069 spam@spam.internet-box.ch"
-alias desk-local="ssh -p 42069 spam@spam-linux"
-alias pi-remote="ssh  -p 1312 pi@spam.internet-box.ch"
-alias pi-local="ssh -XY -p 1312 pi@192.168.1.118"
-alias think-local="ssh -XY spam@thinkspam"
 alias netrestart="sudo systemctl NetworkManager.service"
 
 alias g="git"

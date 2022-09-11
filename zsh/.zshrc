@@ -53,7 +53,6 @@ export XSECURELOCK_NO_COMPOSITE=1
 export ZSH_ALIAS_FINDER_AUTOMATIC=true
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-source ~/.config/zsh_config/spaceship_conf.zsh
 source ~/.aliases
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
