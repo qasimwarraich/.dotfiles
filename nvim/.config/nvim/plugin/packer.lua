@@ -20,6 +20,7 @@ return require("packer").startup(function(use)
             {"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-nvim-lua"},
             {"hrsh7th/cmp-buffer"}, {"hrsh7th/cmp-path"},
             {"hrsh7th/cmp-cmdline"}, {"hrsh7th/cmp-omni"}, {"L3MON4D3/LuaSnip"},
+            "rafamadriz/friendly-snippets", 'saadparwaiz1/cmp_luasnip',
             {"tzachar/cmp-tabnine", run = "./install.sh"},
             {"f3fora/cmp-spell", {"hrsh7th/cmp-calc"}, {"hrsh7th/cmp-emoji"}}
         },
@@ -58,6 +59,6 @@ return require("packer").startup(function(use)
         setup = function() vim.g.mkdp_filetypes = {"markdown"} end,
         ft = {"markdown"}
     })
-    
+
 end)
 

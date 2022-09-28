@@ -13,3 +13,9 @@ vim.api.nvim_exec(
     false)
 -- Run Neoformat on svelte
 vim.api.nvim_exec([[ autocmd BufWritePre *.svelte :Neoformat<CR>]], false)
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+    group = vim.api.nvim_create_augroup('PACKER', { clear = true }),
+    pattern = 'packer.lua',
+    command = 'source <afile> | PackerCompile',
+})
