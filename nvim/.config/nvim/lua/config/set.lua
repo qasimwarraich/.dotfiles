@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.g.mapleader = " "
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -22,5 +24,6 @@ vim.opt.title = true
 -- vim.opt.colorcolumn = "80"
 vim.opt.termguicolors = true
 vim.opt.hidden = true
+vim.opt.splitbelow = true
 
 vim.opt.completeopt = {menu, menuone, noselect}

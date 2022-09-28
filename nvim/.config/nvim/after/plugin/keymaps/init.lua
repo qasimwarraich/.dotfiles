@@ -6,8 +6,6 @@ local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
-vim.g.mapleader = " "
-
 -- Netrw
 nnoremap("<leader>e", ":Ex<CR>")
 
