@@ -1,10 +1,7 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
 function get_config(name) return string.format('require("config/%s")', name) end
-
 function get_default(name) return string.format('require("%s").setup()', name) end
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd [[packadd packer.nvim]] -- Only required if you have packer configured as `opt`
 
 return require("packer").startup(function(use)
     -- Packer can manage itself
@@ -80,7 +77,7 @@ return require("packer").startup(function(use)
         config = require'ccc'.setup({highlighter = {auto_enable = true}})
     })
     use {"lewis6991/gitsigns.nvim", config = get_default("gitsigns")}
-    use {"numToStr/Comment.nvim", config = get_config("Comment")}
+    use {"numToStr/Comment.nvim", config = get_default("Comment")}
     use({
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
