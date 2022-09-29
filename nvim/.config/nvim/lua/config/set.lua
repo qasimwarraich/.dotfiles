@@ -1,29 +1,31 @@
-vim.opt.guicursor = ""
-
-vim.g.mapleader = " "
-
+-- Numbering
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.scrolloff = 8
 
-vim.opt.errorbells = false
+-- Lines
+vim.opt.wrap = false
 
+-- Window
+vim.opt.termguicolors = true
+vim.opt.hidden = true
+vim.opt.splitbelow = true
+vim.opt.guicursor = ""
+vim.opt.title = true
+-- vim.opt.colorcolumn = "80"
+
+-- Indentation
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
-
+-- Search
 vim.opt.incsearch = true
-vim.opt.scrolloff = 8
+vim.opt.errorbells = false
 
-vim.opt.updatetime = 50
-
-vim.opt.title = true
--- vim.opt.colorcolumn = "80"
-vim.opt.termguicolors = true
-vim.opt.hidden = true
-vim.opt.splitbelow = true
-
+-- Misc
+vim.g.mapleader = " "
 vim.opt.completeopt = {menu, menuone, noselect}
+vim.opt.updatetime = 50

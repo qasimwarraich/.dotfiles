@@ -14,15 +14,16 @@ return require("packer").startup(function(use)
     use({"neovim/nvim-lspconfig", requires = {use "ray-x/go.nvim"}})
     use 'lervag/vimtex'
 
+    -- CMP
     use({
         "hrsh7th/nvim-cmp",
         requires = {
-            {"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-nvim-lua"},
-            {"hrsh7th/cmp-buffer"}, {"hrsh7th/cmp-path"},
-            {"hrsh7th/cmp-cmdline"}, {"hrsh7th/cmp-omni"}, {"L3MON4D3/LuaSnip"},
-            "rafamadriz/friendly-snippets", 'saadparwaiz1/cmp_luasnip',
             {"tzachar/cmp-tabnine", run = "./install.sh"},
-            {"f3fora/cmp-spell", {"hrsh7th/cmp-calc"}, {"hrsh7th/cmp-emoji"}}
+            "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-omni", "hrsh7th/cmp-calc", "hrsh7th/cmp-emoji",
+            "L3MON4D3/LuaSnip", 'saadparwaiz1/cmp_luasnip',
+            "rafamadriz/friendly-snippets", "f3fora/cmp-spell"
         },
         config = get_config("cmp")
     })
@@ -50,7 +51,9 @@ return require("packer").startup(function(use)
     use {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
-        requires = {{"nvim-lua/plenary.nvim"}}
+        requires = {
+            "nvim-lua/plenary.nvim", 'nvim-treesitter/nvim-treesitter-context'
+        }
     }
 
     -- Usefull Stuff
@@ -58,6 +61,11 @@ return require("packer").startup(function(use)
     use "theprimeagen/harpoon"
     use "tpope/vim-surround"
     use "tpope/vim-fugitive"
+    use({
+        "uga-rosa/ccc.nvim",
+        branch = "0.7.2",
+        config = require'ccc'.setup({highlighter = {auto_enable = true}})
+    })
     use {"lewis6991/gitsigns.nvim", config = get_default("gitsigns")}
     use {"numToStr/Comment.nvim", config = get_config("Comment")}
     use({
@@ -70,6 +78,5 @@ return require("packer").startup(function(use)
         'kosayoda/nvim-lightbulb',
         requires = 'antoinemadec/FixCursorHold.nvim'
     }
-
 end)
 
