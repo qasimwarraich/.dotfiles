@@ -27,6 +27,12 @@ return require("packer").startup(function(use)
         config = get_config("cmp")
     })
 
+    -- Debugger
+    use "mfussenegger/nvim-dap"
+    use "rcarriga/nvim-dap-ui"
+    use "theHamsta/nvim-dap-virtual-text"
+    use "mfussenegger/nvim-dap-python"
+
     -- Formatter 
     use "sbdchd/neoformat"
 
@@ -48,8 +54,9 @@ return require("packer").startup(function(use)
     }
 
     -- Usefull Stuff
-    use "tpope/vim-surround"
+    use "mbbill/undotree"
     use "theprimeagen/harpoon"
+    use "tpope/vim-surround"
     use "tpope/vim-fugitive"
     use {"lewis6991/gitsigns.nvim", config = get_default("gitsigns")}
     use {"numToStr/Comment.nvim", config = get_config("Comment")}
@@ -59,6 +66,10 @@ return require("packer").startup(function(use)
         setup = function() vim.g.mkdp_filetypes = {"markdown"} end,
         ft = {"markdown"}
     })
+    use {
+        'kosayoda/nvim-lightbulb',
+        requires = 'antoinemadec/FixCursorHold.nvim'
+    }
 
 end)
 
