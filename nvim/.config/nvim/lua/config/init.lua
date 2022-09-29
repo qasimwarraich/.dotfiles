@@ -7,4 +7,5 @@ require("config.autocommands")
 require("config.usercommands")
 require("config.colourscheme")
 require("config.luasnip")
+require("config.neotest")
 

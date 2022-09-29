@@ -43,7 +43,9 @@ return require("packer").startup(function(use)
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
-        requires = {"p00f/nvim-ts-rainbow"},
+        requires = {
+            "p00f/nvim-ts-rainbow", "nvim-treesitter/nvim-treesitter-context"
+        },
         run = ":TSUpdate"
     })
 
@@ -51,8 +53,18 @@ return require("packer").startup(function(use)
     use {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
+        requires = {"nvim-lua/plenary.nvim"}
+    }
+
+    -- Testing
+    use("vim-test/vim-test")
+    use {
+        "nvim-neotest/neotest",
         requires = {
-            "nvim-lua/plenary.nvim", 'nvim-treesitter/nvim-treesitter-context'
+            "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-go",
+            "nvim-neotest/neotest-python", "rouge8/neotest-rust",
+            "haydenmeade/neotest-jest"
         }
     }
 
