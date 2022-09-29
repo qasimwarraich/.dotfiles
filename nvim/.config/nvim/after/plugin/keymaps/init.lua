@@ -12,8 +12,11 @@ nnoremap("<leader>e", ":Ex<CR>")
 -- Neoformat
 nnoremap("<leader>F", ":Neoformat<CR>")
 
+-- Nolist
+nnoremap("<leader>F", ":Neoformat<CR>")
+
 -- Markdown Preview
-nnoremap("<leader>mp", ":MarkdownPreview<CR>")
+nnoremap("<F8>", ":set nolist!<CR>")
 
 -- Register handling
 xnoremap("<leader>p", "\"_dP")

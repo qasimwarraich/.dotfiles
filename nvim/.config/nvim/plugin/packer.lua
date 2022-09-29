@@ -73,6 +73,7 @@ return require("packer").startup(function(use)
     use "theprimeagen/harpoon"
     use "tpope/vim-surround"
     use "tpope/vim-fugitive"
+    use "lukas-reineke/indent-blankline.nvim"
     use({
         "uga-rosa/ccc.nvim",
         branch = "0.7.2",

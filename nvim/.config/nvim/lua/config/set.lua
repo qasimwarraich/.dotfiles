@@ -25,6 +25,11 @@ vim.opt.smartindent = true
 vim.opt.incsearch = true
 vim.opt.errorbells = false
 
+-- List chars
+vim.opt.list = false
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
 -- Misc
 vim.g.mapleader = " "
 vim.opt.completeopt = {menu, menuone, noselect}
