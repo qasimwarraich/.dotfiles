@@ -18,9 +18,9 @@ vim.api.nvim_exec([[ autocmd BufWritePre *.svelte :Neoformat<CR>]], false)
 
 -- Automatically compile packer
 vim.api.nvim_create_autocmd('BufWritePost', {
-    group = vim.api.nvim_create_augroup('PACKER', { clear = true }),
+    group = vim.api.nvim_create_augroup('PACKER', {clear = true}),
     pattern = 'packer.lua',
-    command = 'source <afile> | PackerCompile',
+    command = 'source <afile> | PackerCompile'
 })
 
 -- Lsp Lightbulb
