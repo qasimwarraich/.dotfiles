@@ -1,6 +1,4 @@
--- Set up nvim-cmp.
 local cmp = require('cmp')
-local luasnip = require('luasnip')
 local cmp_keymap = require('config.cmp_keymap')
 
 cmp.setup({

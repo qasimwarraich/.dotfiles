@@ -39,7 +39,6 @@ dap.configurations.javascript = {
     }
 }
 
-local dap = require('dap')
 dap.configurations.cpp = {
     {
         name = "Launch",

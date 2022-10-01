@@ -26,7 +26,7 @@ local M = {}
      nnoremap('<space>rn', vim.lsp.buf.rename, bufopts)
      nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts)
      nnoremap('gr', vim.lsp.buf.references, bufopts)
-     nnoremap('<space>f', vim.lsp.buf.formatting, bufopts)
+     nnoremap('<space>f', vim.lsp.buf.format, bufopts)
  end
 
  M.attach = on_attach
