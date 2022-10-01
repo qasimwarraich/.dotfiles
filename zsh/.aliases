@@ -55,7 +55,7 @@ alias cdT="cd /home/spam/Programming/TESTING"
 alias cdd="pwd | tr -d '\n' | xsel --clipboard --input"
 alias vswaps="cd ~/.local/share/nvim/swap"
 
-alias vrc="nvim ~/.config/nvim/init.vim"
+alias vrc="nvim ~/.dotfiles/nvim/.config/nvim/"
 alias brc="nvim ~/.bashrc"
 alias zrc="$EDITOR ~/.zshrc"
 alias xrc="nvim ~/.xinitrc"
