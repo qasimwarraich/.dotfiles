@@ -7,6 +7,20 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end
     },
+    formatting = {
+        format = function(entry, vim_item)
+            -- Source
+            vim_item.menu = ({
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
+                nvim_lua = "[Lua]",
+                latex_symbols = "[LaTeX]",
+                cmp_tabnine = "[TN]"
+            })[entry.source.name]
+            return vim_item
+        end
+    },
     window = {},
     mapping = cmp_keymap.mapping,
     sources = cmp.config.sources({
