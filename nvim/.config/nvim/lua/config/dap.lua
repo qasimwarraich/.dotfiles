@@ -20,6 +20,7 @@ dap.adapters.node2 = {
         os.getenv('HOME') .. '/Clones/vscode-node-debug2/out/src/nodeDebug.js'
     }
 }
+
 dap.configurations.javascript = {
     {
         name = 'Launch',
