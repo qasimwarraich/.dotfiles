@@ -1,4 +1,3 @@
-
 local attach  = require('config.lsp_keymap').attach
 
 require 'go'.setup({
