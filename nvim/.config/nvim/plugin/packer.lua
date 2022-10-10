@@ -1,4 +1,5 @@
 function get_config(name) return string.format('require("config/%s")', name) end
+
 function get_default(name) return string.format('require("%s").setup()', name) end
 
 vim.cmd [[packadd packer.nvim]] -- Only required if you have packer configured as `opt`
@@ -7,15 +8,15 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    -- LSP 
-    use({"neovim/nvim-lspconfig", requires = {use "ray-x/go.nvim"}})
+    -- LSP
+    use({ "neovim/nvim-lspconfig", requires = { use "ray-x/go.nvim" } })
     use 'lervag/vimtex'
 
     -- CMP
     use({
         "hrsh7th/nvim-cmp",
         requires = {
-            {"tzachar/cmp-tabnine", run = "./install.sh"},
+            { "tzachar/cmp-tabnine", run = "./install.sh" },
             "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-omni", "hrsh7th/cmp-calc", "hrsh7th/cmp-emoji",
@@ -31,7 +32,7 @@ return require("packer").startup(function(use)
     use "theHamsta/nvim-dap-virtual-text"
     use "mfussenegger/nvim-dap-python"
 
-    -- Formatter 
+    -- Formatter
     use "sbdchd/neoformat"
 
     -- Colorscheme
@@ -50,7 +51,7 @@ return require("packer").startup(function(use)
     use {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
-        requires = {"nvim-lua/plenary.nvim"}
+        requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" }
     }
 
     -- Testing
@@ -74,19 +75,18 @@ return require("packer").startup(function(use)
     use({
         "uga-rosa/ccc.nvim",
         branch = "0.7.2",
-        config = require'ccc'.setup({highlighter = {auto_enable = true}})
+        config = require 'ccc'.setup({ highlighter = { auto_enable = true } })
     })
-    use {"lewis6991/gitsigns.nvim", config = get_default("gitsigns")}
-    use {"numToStr/Comment.nvim", config = get_default("Comment")}
+    use { "lewis6991/gitsigns.nvim", config = get_default("gitsigns") }
+    use { "numToStr/Comment.nvim", config = get_default("Comment") }
     use({
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = {"markdown"} end,
-        ft = {"markdown"}
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" }
     })
     use {
         'kosayoda/nvim-lightbulb',
         requires = 'antoinemadec/FixCursorHold.nvim'
     }
 end)
-
