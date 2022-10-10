@@ -1,6 +1,7 @@
 require("config.set")
 require("config.keymap")
 require("config.netrw")
+require("config.telescope")
 require("config.lsp")
 require("config.dap")
 require("config.treesitter")
