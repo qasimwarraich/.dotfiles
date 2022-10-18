@@ -7,12 +7,28 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end
     },
+    formatting = {
+        format = function(entry, vim_item)
+            -- Source
+            vim_item.menu = ({
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
+                nvim_lua = "[Lua]",
+                latex_symbols = "[LaTeX]",
+                ['vim-dadbod-completion'] = "[DB]",
+                cmp_tabnine = "[TN]"
+            })[entry.source.name]
+            return vim_item
+        end
+    },
     window = {},
     mapping = cmp_keymap.mapping,
     sources = cmp.config.sources({
         {name = 'nvim_lsp'}, {name = 'nvim_lua'}, {name = 'cmp_tabnine'},
-        {name = 'path'}, {name = 'luasnip'}
-    }, {{name = 'buffer'}})
+        {name = 'path'}, {name = 'luasnip'},
+        {name = 'buffer'}
+    })
 })
 
 cmp.setup.filetype('gitcommit', {

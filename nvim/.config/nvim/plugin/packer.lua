@@ -7,7 +7,7 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    -- LSP 
+    -- LSP
     use({"neovim/nvim-lspconfig", requires = {use "ray-x/go.nvim"}})
     use 'lervag/vimtex'
 
@@ -50,7 +50,9 @@ return require("packer").startup(function(use)
     use {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
-        requires = {"nvim-lua/plenary.nvim"}
+        requires = {
+            "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim"
+        }
     }
 
     -- Testing
@@ -62,6 +64,22 @@ return require("packer").startup(function(use)
             "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-go",
             "nvim-neotest/neotest-python", "rouge8/neotest-rust",
             "haydenmeade/neotest-jest"
+        }
+    }
+
+    -- Databases
+    use {
+        "tpope/vim-dadbod",
+        requires = {
+            "kristijanhusak/vim-dadbod-ui", {
+                "kristijanhusak/vim-dadbod-completion",
+                config = function()
+                    vim.cmd(
+                        [[autocmd FileType sql,mysql,plsql lua require("cmp").setup.buffer({sources = {{ name = "vim-dadbod-completion" }, { name = "buffer" },} })]])
+                    vim.cmd( [[let g:db_ui_use_nerd_fonts = 1 ]])
+                    vim.cmd( [[let g:db_ui_win_position = "right" ]])
+                end
+            }
         }
     }
 
