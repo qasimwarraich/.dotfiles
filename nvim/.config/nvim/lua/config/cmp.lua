@@ -16,6 +16,7 @@ cmp.setup({
                 luasnip = "[LuaSnip]",
                 nvim_lua = "[Lua]",
                 latex_symbols = "[LaTeX]",
+                ['vim-dadbod-completion'] = "[DB]",
                 cmp_tabnine = "[TN]"
             })[entry.source.name]
             return vim_item
@@ -25,8 +26,9 @@ cmp.setup({
     mapping = cmp_keymap.mapping,
     sources = cmp.config.sources({
         {name = 'nvim_lsp'}, {name = 'nvim_lua'}, {name = 'cmp_tabnine'},
-        {name = 'path'}, {name = 'luasnip'}
-    }, {{name = 'buffer'}})
+        {name = 'path'}, {name = 'luasnip'},
+        {name = 'buffer'}
+    })
 })
 
 cmp.setup.filetype('gitcommit', {
