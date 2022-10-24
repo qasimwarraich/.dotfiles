@@ -9,8 +9,12 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
 
     -- LSP
-    use({ "neovim/nvim-lspconfig", requires = { use "ray-x/go.nvim" } })
-    use 'lervag/vimtex'
+    use({ "neovim/nvim-lspconfig", requires = {
+        "lervag/vimtex",
+        "ray-x/go.nvim",
+        "simrat39/rust-tools.nvim"
+    }
+    })
 
     -- CMP
     use({
@@ -77,8 +81,8 @@ return require("packer").startup(function(use)
                 config = function()
                     vim.cmd(
                         [[autocmd FileType sql,mysql,plsql lua require("cmp").setup.buffer({sources = {{ name = "vim-dadbod-completion" }, { name = "buffer" },} })]])
-                    vim.cmd( [[let g:db_ui_use_nerd_fonts = 1 ]])
-                    vim.cmd( [[let g:db_ui_win_position = "right" ]])
+                    vim.cmd([[let g:db_ui_use_nerd_fonts = 1 ]])
+                    vim.cmd([[let g:db_ui_win_position = "right" ]])
                 end
             }
         }

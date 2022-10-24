@@ -19,4 +19,5 @@ end
 -- Custom configs
 require("config.custom_servers.sumneko")
 require("config.custom_servers.go")
+require("config.custom_servers.rust")
 
