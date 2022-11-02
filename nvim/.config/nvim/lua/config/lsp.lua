@@ -5,7 +5,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
-    "pyright", "jedi_language_server", "rust_analyzer", "tsserver", "clangd",
+    "pyright", "jedi_language_server", "tsserver", "clangd",
     'vimls', 'html', 'cssls', 'intelephense', 'dockerls', 'metals', 'ansiblels',
     'texlab', 'ltex', 'svelte'
 }
@@ -20,4 +20,3 @@ end
 require("config.custom_servers.sumneko")
 require("config.custom_servers.go")
 require("config.custom_servers.rust")
-
