@@ -170,7 +170,7 @@ ctrl + alt + h
     st -e 'htop'
 
 #Caps lock 
-shift + Escape
+alt + Escape
         xdotool key Caps_Lock
 
 #Disable touchpad 
