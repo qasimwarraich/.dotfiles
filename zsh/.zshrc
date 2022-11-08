@@ -18,6 +18,14 @@ compinit
 #vimode: Fix backspace bug when switching modes
 bindkey "^?" backward-delete-char
 
+autoload -U history-search-end
+
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey "\e[A" history-beginning-search-backward-end
+bindkey "\e[B" history-beginning-search-forward-end
+
 #vimode: Change cursor shape for different vi modes.
 function zle-keymap-select {
     if [[ ${KEYMAP} == vicmd ]] ||
@@ -38,7 +46,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 #Import/Export
 fpath=("$HOME/.config/zsh_config/zprompts" "$fpath[@]")
-path+=('/home/spam/.scripts/')
+path+=('/home/spam/.scripts')
 path+=('/home/spam/.npm-global/bin')
 path+=('/home/spam/go/bin')
 path+=('/home/spam/.local/share/gem/ruby/3.0.0/bin')
