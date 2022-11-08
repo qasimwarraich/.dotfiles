@@ -1,5 +1,6 @@
 require("config.set")
 require("config.keymap")
+require("config.diagnostic")
 require("config.netrw")
 require("config.telescope")
 require("config.lsp")
