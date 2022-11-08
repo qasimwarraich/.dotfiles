@@ -1,0 +1,16 @@
+#!/bin/sh
+
+COMMAND="$*"
+BINARY="$(printf "$COMMAND" | sed 's/ .*//')"
+echo $BINARY
+ARGS="$(printf "$COMMAND" | sed "s/$BINARY //")"
+echo $ARGS
+
+main() {
+    WINID=$(xdo id)
+    xdo hide $WINID
+    $BINARY "$ARGS" || $BINARY $ARGS
+    xdo show $WINID
+}
+
+[ "$1" = "" ] && printf "Error: You must provide at least one argument.\nExample usage: swallow mpv ~/videos/AmericanPsycho.mkv\n" || main "$@"
