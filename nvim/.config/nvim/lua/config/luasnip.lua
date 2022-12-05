@@ -9,7 +9,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 
 ls.add_snippets("rust", {
-    s({trig= "prd", dscr= "Named debug print {:?}"}, {
+    s({trig= "prd", name= "Debug Print",  dscr= "Allows for a named debug print using {:?}"}, {
         t("println!(\""), i(1, "var"), t(" = {:?}\", "), rep(1), t(");")
     })
 })
