@@ -3,7 +3,7 @@ local inoremap = require('config.keymap').inoremap
 
 local M = {}
 
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 nnoremap('<space>E', vim.diagnostic.open_float, opts)
 nnoremap('[d', vim.diagnostic.goto_prev, opts)
 nnoremap(']d', vim.diagnostic.goto_next, opts)
@@ -12,7 +12,7 @@ nnoremap('<space>q', vim.diagnostic.setloclist, opts)
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    local bufopts = {noremap = true, silent = true, buffer = bufnr}
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     nnoremap('gD', vim.lsp.buf.declaration, bufopts)
     nnoremap('gd', vim.lsp.buf.definition, bufopts)
     nnoremap('K', vim.lsp.buf.hover, bufopts)
@@ -28,6 +28,23 @@ local on_attach = function(client, bufnr)
     nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts)
     nnoremap('gr', vim.lsp.buf.references, bufopts)
     nnoremap('<space>f', vim.lsp.buf.format, bufopts)
+
+
+
+    local active_clients = vim.lsp.get_active_clients()
+    if client.name == 'denols' then
+        for _, client_ in pairs(active_clients) do
+            if client_.name == 'tsserver' then
+                client_.stop()
+            end
+        end
+    elseif client.name == 'tsserver' then
+        for _, client_ in pairs(active_clients) do
+            if client_.name == 'denols' then
+                client.stop()
+            end
+        end
+    end
 end
 
 M.attach = on_attach
