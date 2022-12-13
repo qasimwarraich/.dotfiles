@@ -41,3 +41,7 @@ nnoremap("<esc><esc>", ":noh<return>")
 
 -- Close window
 nmap("<leader>x", "<C-w>q")
+
+-- Better c+d/u
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
