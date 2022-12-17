@@ -12,7 +12,7 @@ vim.opt.hidden = true
 vim.opt.splitbelow = true
 vim.opt.guicursor = ""
 vim.opt.title = true
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 
 -- Indentation
 vim.opt.tabstop = 4
@@ -34,3 +34,8 @@ vim.opt.listchars:append("eol:↴")
 vim.g.mapleader = " "
 vim.opt.completeopt = {menu, menuone, noselect}
 vim.opt.updatetime = 50
+
+-- Undofile
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+

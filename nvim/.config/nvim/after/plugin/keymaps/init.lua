@@ -1,47 +1,42 @@
-local Remap = require("config.keymap")
-
-local nnoremap = Remap.nnoremap
-local vnoremap = Remap.vnoremap
-local inoremap = Remap.inoremap
-local xnoremap = Remap.xnoremap
-local nmap = Remap.nmap
-
 -- Netrw
-nnoremap("<leader>e", ":Ex<CR>")
+vim.keymap.set("n","<leader>e", ":Ex<CR>")
 
 -- Neoformat
-nnoremap("<leader>F", ":Neoformat<CR>")
+vim.keymap.set("n","<leader>F", ":Neoformat<CR>")
 
 -- Nolist
-nnoremap("<leader>F", ":Neoformat<CR>")
+vim.keymap.set("n","<F8>", ":set nolist!<CR>")
 
 -- Markdown Preview
-nnoremap("<F8>", ":set nolist!<CR>")
+vim.keymap.set("n","<leader>mp", ":MarkdownPreview<CR>")
 
 -- Register handling
-xnoremap("<leader>p", "\"_dP")
+vim.keymap.set("x","<leader>p", [["_dP]])
 
-nnoremap("<leader>p", "\"+p")
-nmap("<leader>P", "\"+P")
+vim.keymap.set("n","<leader>p", [["+p]])
+vim.keymap.set("n","<leader>P", [["+P]])
 
-nnoremap("<leader>y", "\"+y")
-vnoremap("<leader>y", "\"+y")
-nmap("<leader>Y", "\"+Y")
+vim.keymap.set("n","<leader>y", [["+y]])
+vim.keymap.set("v","<leader>y", [["+y]])
+vim.keymap.set("n","<leader>Y", [["+Y]])
 
-nnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
+vim.keymap.set("n","<leader>d", [["_d]])
+vim.keymap.set("v","<leader>d", [["_d]])
+vim.keymap.set("v","<leader>d", [["_d]])
 
 -- Moving lines
-vnoremap("J", ":m '>+1<CR>gv=gv")
-vnoremap("K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v","J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v","K", ":m '<-2<CR>gv=gv")
 
 -- Remove search highlighting
-nnoremap("<esc><esc>", ":noh<return>")
+vim.keymap.set("n","<esc><esc>", ":noh<return>")
 
 -- Close window
-nmap("<leader>x", "<C-w>q")
+vim.keymap.set("n","<leader>x", "<C-w>q")
 
 -- Better c+d/u
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
+vim.keymap.set("n","<C-d>", "<C-d>zz")
+vim.keymap.set("n","<C-u>", "<C-u>zz")
+
+-- Search and repace under cursor
+vim.keymap.set("n", "<leader>/", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
