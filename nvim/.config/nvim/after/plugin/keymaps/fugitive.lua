@@ -1,4 +1,2 @@
-local nnoremap = require("config.keymap").nnoremap
-
-nnoremap("<leader>g", ":Git<CR>")
+vim.keymap.set("n","<leader>g", ":Git<CR>")
 
