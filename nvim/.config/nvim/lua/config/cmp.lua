@@ -19,6 +19,12 @@ cmp.setup({
                 ['vim-dadbod-completion'] = "[DB]",
                 cmp_tabnine = "[TN]"
             })[entry.source.name]
+
+            -- TODO: Maybe check if tailwindserver is attached?
+            if vim.tbl_contains({ 'nvim_lsp' }, entry.source.name) then
+                tailwind  = require("tailwindcss-colorizer-cmp").formatter
+                vim_item = tailwind(entry, vim_item)
+            end
             return vim_item
         end
     },
