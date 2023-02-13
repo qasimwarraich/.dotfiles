@@ -241,6 +241,8 @@ output eDP-1 scale 1.5
 exec_always /home/spam/.scripts/swhkd
 
 exec udiskie &
+exec keepassxc
+exec nextcloud
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
