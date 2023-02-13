@@ -1,0 +1,34 @@
+# A list of hotkeys independent of the window manager. 
+
+
+# Launch browser
+super + w
+        firefox
+super + q
+        qutebrowser
+# Launch dmenu
+super + p 
+        dmenu_run
+# Printscreen flameshot
+Print 
+        flameshot gui
+
+# Clipmenu 
+super + Insert
+        clipmenu
+
+#File Manager
+ctrl + alt + f 
+        pcmanfm
+
+#Power Options
+super + shift + Escape
+        ~/.scripts/poweroptions
+
+#Dunst Options
+super + d
+        ~/.scripts/dunst_options
+
+ctrl + alt + Escape
+        systemctl suspend 
+
