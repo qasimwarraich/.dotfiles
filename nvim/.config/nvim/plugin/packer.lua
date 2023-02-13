@@ -94,13 +94,8 @@ return require("packer").startup(function(use)
     use {"kylechui/nvim-surround", config = get_default("nvim-surround")}
     use "tpope/vim-fugitive"
     use "lukas-reineke/indent-blankline.nvim"
-    use({
-        "uga-rosa/ccc.nvim",
-        branch = "0.7.2",
-        config = require 'ccc'.setup({ highlighter = { auto_enable = true } })
-    })
-    use { "lewis6991/gitsigns.nvim", config = get_default("gitsigns") }
-    use { "numToStr/Comment.nvim", config = get_default("Comment") }
+    use {"lewis6991/gitsigns.nvim", config = get_default("gitsigns")}
+    use {"numToStr/Comment.nvim", config = get_default("Comment")}
     use({
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
@@ -119,5 +114,10 @@ return require("packer").startup(function(use)
                 color_square_width = 2,
             })
         end
+    })
+
+    use({    
+        "uga-rosa/ccc.nvim",
+        config = require'ccc'.setup({highlighter = {auto_enable = true}})
     })
 end)
