@@ -1,0 +1,80 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Hack Nerd Font, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    min-height: 0;
+    padding: 0px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 1);
+    border-bottom: 1px solid rgba(100, 114, 125, 0.5);
+    color: white;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+    padding: 0 0px;
+    background: transparent;
+    color: white;
+    border: 0.5px solid gray;
+    /* border-bottom: 0.5px solid rgba(100, 114, 125, 0.5); */
+}
+
+#workspaces button.focused {
+    color: #DAA520;
+}
+
+#mode, #clock, #battery {
+    /* padding: 0 10px; */
+}
+
+#mode {
+    background: #750e18;
+}
+
+#network {
+    color: #26e600;
+}
+
+#network.disconnected {
+    color: #900000;
+}
+
+#custom-seperator {
+    color: rgba(100, 114, 125, 0.5); 
+}
+
+#battery {
+    color: white;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
