@@ -31,10 +31,10 @@ alias forlols="fortune|cowsay|lolcat"
 alias smc="source /home/spam/miniconda3/bin/activate"
 alias snvm="source /usr/share/nvm/init-nvm.sh"
 alias dmc="conda deactivate"
-alias cdebug="cp ~/Programming/Templates/Vimspector/C/.vimspector.json ./"
-alias pydebug="cp ~/Programming/Templates/Vimspector/Python/.vimspector.json ./"
-alias tsconf="cp ~/Programming/Templates/tsconfig/tsconfig.json ./"
-alias cformat="cp ~/Programming/Templates/clang-format/clang-format ./.clang-format"
+alias cdebug="cp ~/Personal/Templates/Vimspector/C/.vimspector.json ./"
+alias pydebug="cp ~/Personal/Templates/Vimspector/Python/.vimspector.json ./"
+alias tsconf="cp ~/Personal/Templates/tsconfig/tsconfig.json ./"
+alias cformat="cp ~/Personal/Templates/clang-format/clang-format ./.clang-format"
 
 alias spam="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias rsn="pacman -Qet | fzf -m --preview 'pacman -Si {1}'| awk '{print \$1}' | sudo xargs -ro pacman -Rsn"
@@ -49,9 +49,9 @@ alias cdC="cd /home/spam/Clones"
 alias cdu="cd /home/spam/Documents/uzh"
 alias cdP="cd /home/spam/Pictures"
 alias cdv="cd /home/spam/.dotfiles/nvim/.config/nvim"
-alias cdp="cd /home/spam/Programming"
-alias cdV="cd /home/spam/Programming/VKB"
-alias cdT="cd /home/spam/Programming/TESTING"
+alias cdp="cd /home/spam/Personal"
+alias cdV="cd /home/spam/Personal/VKB"
+alias cdT="cd /home/spam/Personal/TESTING"
 alias cdd="pwd | tr -d '\n' | xsel --clipboard --input"
 alias vswaps="cd ~/.local/share/nvim/swap"
 
@@ -102,5 +102,5 @@ os(){ fd . ~/ -Hc always | fzf -m --ansi | xargs -d '\n' -r xdg-open;}
 vs(){ fd . ~/ -Hc always | fzf -m --ansi | xargs -r $EDITOR;}
 zs(){ fd . ~/ -e "pdf" -Hc always  | fzf -m --ansi | xargs -d '\n' -r zathura;}
 cs(){ cd "$(fd -H -c always -t d | fzf --ansi)" || exit;}
-CS(){ cd "$(fd  . ~/Programming -H -c always -t d | fzf --ansi)" || exit ;}
+CS(){ cd "$(fd  . ~/Personal -H -c always -t d | fzf --ansi)" || exit ;}
 
