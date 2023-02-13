@@ -4,7 +4,7 @@ general {
         interval = 5
 }
 
-order += "disk /"
+order += "disk /home"
 order += "run_watch DHCP"
 order += "path_exists VPN"
 order += "wireless wlan0"
@@ -68,7 +68,7 @@ memory {
         format_degraded = "MEMORY: %free"
 }
 
-disk "/" {
+disk "/home" {
         format = "%free"
 }
 
