@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+OPT=$(echo -e "Lock-Screen\nExit-Sway\nSuspend\nReboot\nShutdown\nCancel" | bemenu -i -l 6 -p "Power Options:")
+
+case $OPT in
+        Lock-Screen) swaylock;;
+        Exit-Sway) swaymsg exit;;
+        Suspend) systemctl suspend ;;
+        Reboot) reboot ;;
+        Shutdown) shutdown now ;;
+        *) ;; 
+esac 
