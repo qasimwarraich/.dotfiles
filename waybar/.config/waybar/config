@@ -12,7 +12,11 @@
   "modules-right": [
     "disk",
     "custom/seperator",
+    "memory",
+    "custom/seperator",
     "network",
+    "custom/seperator",
+    "temperature",
     "custom/seperator",
     "backlight",
     "custom/seperator",
@@ -20,18 +24,18 @@
     "custom/seperator",
     "battery",
     "custom/seperator",
-    "temperature",
-    "custom/seperator",
-    "memory",
-    "custom/seperator",
     "tray"
   ],
   "sway/window": {
       "format": " {}",
       "max-length": 50
   },
+  "sway/workspaces": {
+      "smooth-scrolling-threshold": 0.5
+  },
   "battery": {
     "format": "{icon}{capacity}%",
+    "format-charging": "⚡{capacity}%",
     "format-icons": [
       //"",
       //"",
@@ -85,7 +89,8 @@
   },
   "network": {
       "format": "{ifname}",
-      "format-wifi": "{essid} ({signalStrength}%)  ",
+      "interval": 5,
+      "format-wifi": "{essid} {bandwidthTotalBits} ({signalStrength}%)  ",
       "format-ethernet": "{ipaddr}/{cidr}  ",
       "format-disconnected": " down ", //An empty format will hide the module.
       "tooltip-format": "{ifname} via {gwaddr} ",

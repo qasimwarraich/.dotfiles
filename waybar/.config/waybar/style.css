@@ -22,27 +22,27 @@ tooltip label {
 }
 
 #workspaces button {
-    padding: 0 0px;
+    padding-left: 1px;
     background: transparent;
     color: white;
-    border: 0.5px solid gray;
-    /* border-bottom: 0.5px solid rgba(100, 114, 125, 0.5); */
+    border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
 #workspaces button.focused {
     color: #DAA520;
 }
 
-#mode, #clock, #battery {
-    /* padding: 0 10px; */
+#clock { 
+    padding: 0 10px;
 }
 
 #mode {
-    background: #750e18;
+    padding: 0 4px;
+    background: #9a1318;
 }
 
 #network {
-    color: #26e600;
+    color: #00ff00;
 }
 
 #network.disconnected {
@@ -50,16 +50,11 @@ tooltip label {
 }
 
 #custom-seperator {
-    color: rgba(100, 114, 125, 0.5); 
+    color: rgba(100, 114, 125, 1); 
 }
 
 #battery {
     color: white;
-}
-
-#battery.charging {
-    color: white;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
