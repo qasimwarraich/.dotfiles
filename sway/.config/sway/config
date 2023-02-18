@@ -232,7 +232,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
 
 input "type:keyboard" {
     xkb_layout us
-    xkb_options caps:escape
+    xkb_options "caps:escape,compose:ralt"
 }
 
 input 2362:628:PIXA3854:00_093A:0274_Touchpad {
