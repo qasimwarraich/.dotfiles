@@ -230,6 +230,14 @@ bindsym $mod+Shift+z	gaps outer current minus 4 ; gaps inner current minus 4
 bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
 
+bindsym $mod+w exec firefox
+bindsym $mod+p exec bmenu-run -l 10
+bindsym $mod+e exec ~/.scripts/emoji-bemenu
+bindsym $mod+Shift+Escape exec ~/.scripts/poweroptions-bemenu
+bindsym $mod+F7 execbrightnessctl -d intel_backlight s 1%
+bindsym ctrl+alt+f exec pcmanfm
+bindsym ctrl+alt+Escape exec systemctl suspend
+
 input "type:keyboard" {
     xkb_layout us
     xkb_options "caps:escape,compose:ralt"
