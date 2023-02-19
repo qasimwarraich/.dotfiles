@@ -32,7 +32,7 @@ font pango:Hack Nerd Font 8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
@@ -223,20 +223,8 @@ client.focused          $gold   $black           $white  $purple       $gold
 # client.urgent           $base02 $base0D    $base00 $base0D
 gaps outer 4
 gaps inner 4
-bindsym $mod+g		gaps outer current set 0 ; gaps inner current set 0
-bindsym $mod+z		gaps outer current plus 4 ; gaps inner current plus 4
-bindsym $mod+Shift+z	gaps outer current minus 4 ; gaps inner current minus 4
 
-bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
-
-bindsym $mod+w exec firefox
-bindsym $mod+p exec bmenu-run -l 10
-bindsym $mod+e exec ~/.scripts/emoji-bemenu
-bindsym $mod+Shift+Escape exec ~/.scripts/poweroptions-bemenu
-bindsym $mod+F7 execbrightnessctl -d intel_backlight s 1%
-bindsym ctrl+alt+f exec pcmanfm
-bindsym ctrl+alt+Escape exec systemctl suspend
+include mappings
 
 input "type:keyboard" {
     xkb_layout us

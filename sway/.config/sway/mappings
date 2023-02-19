@@ -1,0 +1,18 @@
+# i3 config file (v4)
+
+set $mod Mod4
+
+bindsym $mod+g		gaps outer current set 0 ; gaps inner current set 0
+bindsym $mod+z		gaps outer current plus 4 ; gaps inner current plus 4
+bindsym $mod+Shift+z	gaps outer current minus 4 ; gaps inner current minus 4
+
+bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
+
+bindsym $mod+w exec firefox
+bindsym $mod+p exec bemenu-run -l 10
+bindsym $mod+e exec ~/.scripts/emoji-bemenu
+bindsym $mod+Shift+Escape exec ~/.scripts/poweroptions-bemenu
+bindsym $mod+F7 execbrightnessctl -d intel_backlight s 1%
+bindsym ctrl+alt+f exec pcmanfm
+bindsym ctrl+alt+Escape exec systemctl suspend
