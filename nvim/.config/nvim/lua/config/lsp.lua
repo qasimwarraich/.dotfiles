@@ -7,7 +7,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local servers = {
     "pyright", "jedi_language_server", "tsserver", "clangd",
     'vimls', 'html', 'cssls', 'intelephense', 'dockerls', 'metals', 'ansiblels',
-    'texlab', 'ltex', 'svelte', 'tailwindcss', 'denols'
+    'texlab', 'ltex', 'svelte', 'tailwindcss', 'denols', 'eslint'
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
