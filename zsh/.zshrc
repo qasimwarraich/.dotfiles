@@ -47,6 +47,8 @@ path+=('/home/spam/.npm-global/bin')
 path+=('/home/spam/go/bin')
 path+=('/home/spam/.local/share/gem/ruby/3.0.0/bin')
 path+=('/home/spam/.local/share/coursier/bin')
+path+=('/home/spam/.local/bin')
+
 
 export NODE_PATH="$HOME/.npm-global/lib/node_modules/"
 export _JAVA_AWT_WM_NONREPARENTING=1 # IDEA hack
