@@ -13,6 +13,7 @@ bindsym $mod+w exec firefox
 bindsym $mod+p exec bemenu-run -l 10
 bindsym $mod+e exec ~/.scripts/emoji-bemenu
 bindsym $mod+Shift+Escape exec ~/.scripts/poweroptions-bemenu
+bindsym ctrl+alt+d exec ~/.scripts/dunst_options_bemenu
 bindsym $mod+F7 exec brightnessctl -d intel_backlight s 1%
 bindsym $mod+F8 exec brightnessctl -d intel_backlight s 100%
 bindsym ctrl+alt+f exec pcmanfm

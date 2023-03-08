@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+OPT=$(echo -e "Context\nToggle\nClear\nClear-All\nPop\nStatus\nCancel" | bemenu -l 8 -p "Dunst Paused? : $(dunstctl is-paused)")
+
+case $OPT in
+        # Lock-Screen) betterlockscreen -l -t "Enter Your Password";;
+        Context) dunstctl context;;
+        Toggle) dunstctl set-paused toggle;;
+        Clear) dunstctl close;;
+        Clear-All) dunstctl close-all;;
+        Pop) dunstctl history-pop;;
+        Status) notify-send "$(dunstctl count)";;
+        *) ;; 
+esac 
