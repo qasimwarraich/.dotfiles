@@ -56,6 +56,7 @@ export FZF_DEFAULT_OPTS='--height 42% --no-reverse'
 export XSECURELOCK_NO_COMPOSITE=1
 export ZSH_ALIAS_FINDER_AUTOMATIC=true
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
+export GPG_TTY=$(tty)
 
 source ~/.aliases
 source /usr/share/fzf/completion.zsh
