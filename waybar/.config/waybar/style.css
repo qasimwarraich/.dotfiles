@@ -32,10 +32,6 @@ tooltip label {
     color: #DAA520;
 }
 
-#clock { 
-    /* padding: 0 10px; */
-}
-
 #mode {
     padding: 0 4px;
     background: #9a1318;
@@ -46,7 +42,7 @@ tooltip label {
 }
 
 #network.disconnected {
-    color: #900000;
+    color: #FF0000;
 }
 
 #custom-seperator {
