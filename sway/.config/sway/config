@@ -243,7 +243,7 @@ input 1133:50184:Logitech_USB_Trackball {
     middle_emulation true
     }
 
-output "*" bg /home/spam/.dotfiles/wallpapers/hiroshi-path.jpg fill
+output "*" bg /home/spam/.dotfiles/wallpapers/hiroshi-path.png fill
 output eDP-1 scale 1.5
 
 exec /home/spam/.scripts/idle_sway
