@@ -28,6 +28,9 @@ style = "bold red"
 style = "bold yellow"
 format = '([$all_status$ahead_behind]($style) )'
 
+[aws]
+disabled = true
+
 [scala]
 disabled = true
 
