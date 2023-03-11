@@ -9,4 +9,7 @@ highlight("NormalNC", {bg = "none"})
 highlight("Pmenu", {bg = "none"})
 highlight("Signcolumn", {bg = "none", fg = "gold"})
 highlight("Linenr", {bg = "none", fg = "gold"})
+highlight("TelescopeBorder", {bg = "none", fg = "gold"})
+highlight("TelescopeTitle", {bg = "none", fg = "gold"})
+highlight("TelescopePromptCounter", {bg = "none", fg = "gold"})
 
