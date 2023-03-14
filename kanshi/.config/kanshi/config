@@ -1,0 +1,8 @@
+profile work-dell {
+	output eDP-1 enable scale 1.5
+	output 'Dell Inc. DELL U2720Q CYSSY13' mode 3840x2160 position 1504,0 enable scale 1.5
+}
+
+profile inbuilt {
+	output eDP-1 enable scale 1.5
+}
