@@ -10,6 +10,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
 
 bindsym $mod+w exec firefox
+bindsym $mod+shift+w exec brave
 bindsym $mod+p exec bemenu-run -l 10
 bindsym $mod+e exec ~/.scripts/emoji-bemenu
 bindsym $mod+Shift+Escape exec ~/.scripts/poweroptions-bemenu
