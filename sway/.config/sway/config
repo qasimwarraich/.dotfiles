@@ -249,12 +249,13 @@ output eDP-1 scale 1.5
 
 exec /home/spam/.scripts/idle_sway
 exec udiskie &
-exec kanshi
+exec_always kanshi
 exec keepassxc
 exec nextcloud
 exec nm-applet --indicator
 exec blueman-applet
-
+exec_always wl-paste --watch cliphist store
+exec_always wl-paste --type image --watch cliphist store
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
