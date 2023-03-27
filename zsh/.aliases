@@ -43,6 +43,7 @@ alias update="sudo pacman -Syu"
 
 alias ..="cd .."
 alias cd.="cd /home/spam/.dotfiles"
+alias cda="cd /home/spam/Clones/ansible/Ansible"
 alias cdc="cd /home/spam/.config"
 alias cds="cd /home/spam/.scripts"
 alias cdC="cd /home/spam/Clones"
