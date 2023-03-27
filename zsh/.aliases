@@ -86,6 +86,8 @@ alias gd="git diff"
 alias gC="git checkout"
 alias lg="lazygit"
 
+alias kc="kubectl"
+
 alias sin="sudo make clean install"
 alias sun="sudo make uninstall"
 alias vc="nvim config.h"
