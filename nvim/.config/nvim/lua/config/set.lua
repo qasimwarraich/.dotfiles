@@ -32,10 +32,9 @@ vim.opt.listchars:append("eol:↴")
 
 -- Misc
 vim.g.mapleader = " "
-vim.opt.completeopt = {menu, menuone, noselect}
+vim.opt.completeopt = { menu, menuone, noselect }
 vim.opt.updatetime = 50
 
 -- Undofile
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
-

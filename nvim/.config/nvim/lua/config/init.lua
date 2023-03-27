@@ -11,4 +11,3 @@ require("config.usercommands")
 require("config.colourscheme")
 require("config.luasnip")
 require("config.indent_blankline")
-
