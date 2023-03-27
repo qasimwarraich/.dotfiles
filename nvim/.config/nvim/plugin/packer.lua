@@ -42,6 +42,8 @@ return require("packer").startup(function(use)
 		config = get_config("cmp"),
 	})
 
+	use({ "vigoux/ltex-ls.nvim" })
+
 	-- Debugger
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
