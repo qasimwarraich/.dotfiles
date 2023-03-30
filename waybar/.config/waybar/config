@@ -80,7 +80,8 @@
   "custom/notifications": {
     "format": "Notifications {}",
     "exec": "notification-status",
-    "restart-interval": 5,
+    "restart-interval": 60,
+    "signal": 8,
     "tooltip": false
   },
   "temperature": {

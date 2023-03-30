@@ -13,3 +13,5 @@ case $OPT in
         Status) notify-send "$(dunstctl count)";;
         *) ;; 
 esac 
+
+signal-waybar
