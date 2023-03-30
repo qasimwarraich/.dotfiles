@@ -9,6 +9,8 @@
   "modules-center": [
   ],
   "modules-right": [
+    "custom/notifications",
+    "custom/seperator",
     "disk",
     "custom/seperator",
     "memory",
@@ -73,6 +75,12 @@
   "custom/seperator": {
     "format": "|",
     "interval": "once",
+    "tooltip": false
+  },
+  "custom/notifications": {
+    "format": "Notifications {}",
+    "exec": "notification-status",
+    "restart-interval": 5,
     "tooltip": false
   },
   "temperature": {

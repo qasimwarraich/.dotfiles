@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+CMD=$(dunstctl is-paused)
+
+ACTIVE=🟢
+INACTIVE=🔴
+
+if [ "$CMD" = "true" ]
+then
+    echo $INACTIVE
+else
+    echo $ACTIVE
+fi
