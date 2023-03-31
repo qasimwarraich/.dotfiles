@@ -1,3 +1,0 @@
-#/bin/sh
-
-sxiv -b -f -S 7 /home/spam/Pictures/Fortunes/*

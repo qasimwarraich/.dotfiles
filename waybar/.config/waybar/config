@@ -78,10 +78,11 @@
     "tooltip": false
   },
   "custom/notifications": {
-    "format": "Notifications {}",
+    "format": "{}",
     "exec": "notification-status",
-    "restart-interval": 60,
+    "interval": 60,
     "signal": 8,
+    "on-click": "dunst_toggle",
     "tooltip": false
   },
   "temperature": {
