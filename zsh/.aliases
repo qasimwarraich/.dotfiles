@@ -31,8 +31,6 @@ alias forlols="fortune|cowsay|lolcat"
 alias snvm="source /usr/share/nvm/init-nvm.sh"
 alias smc="source /home/spam/Clones/miniconda3/bin/activate"
 alias dmc="conda deactivate"
-alias cdebug="cp ~/Personal/Templates/Vimspector/C/.vimspector.json ./"
-alias pydebug="cp ~/Personal/Templates/Vimspector/Python/.vimspector.json ./"
 alias tsconf="cp ~/Personal/Templates/tsconfig/tsconfig.json ./"
 alias cformat="cp ~/Personal/Templates/clang-format/clang-format ./.clang-format"
 
@@ -56,6 +54,8 @@ alias cdw="cd /home/spam/Work"
 alias cdT="cd /home/spam/Personal/TESTING"
 alias cdd="pwd | tr -d '\n' | xsel --clipboard --input"
 alias vswaps="cd ~/.local/share/nvim/swap"
+
+alias cmx="chmod +x"
 
 alias vrc="nvim ~/.dotfiles/nvim/.config/nvim/"
 alias brc="nvim ~/.bashrc"
@@ -98,8 +98,6 @@ alias wttr="curl v2.wttr.in/Bern"
 
 alias blue="sudo rfkill unblock bluetooth"
 alias bblue="sudo rfkill block bluetooth"
-alias fan="sudo systemctl start thinkfan.service"
-alias sttray="stalonetray --icon-size=16  -d none --grow-gravity E --geometry 1X1-490-1052  -bg \"#\"444444 --window-type dock -f 18 --window-layer top  --kludges fix_window_pos,force_icons_size,use_icons_hints"
 alias rssh="rofi -show ssh"
 
 # Helpful funcitons 
