@@ -21,6 +21,29 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- CMP
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			{ "tzachar/cmp-tabnine", run = "./install.sh" },
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-omni",
+			"hrsh7th/cmp-calc",
+			"hrsh7th/cmp-emoji",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+			"f3fora/cmp-spell",
+		},
+		config = get_config("cmp"),
+	})
+
+	use({ "vigoux/ltex-ls.nvim" })
+
 	-- Debugger
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
@@ -30,8 +53,8 @@ return require("packer").startup(function(use)
 	-- Formatter
 	use("sbdchd/neoformat")
 
-    -- Colorscheme
-    use "rebelot/kanagawa.nvim"
+	-- Colorscheme
+	use("rebelot/kanagawa.nvim")
 
 	-- Treesitter
 	use({
