@@ -29,4 +29,14 @@ if err != nil {{
 			{}
 		)
 	),
+	s(
+		{ trig = "erp", name = "Print error", dscr = "Checks if err exists and print it" },
+		fmt(
+			[[
+if err != nil {{
+    fmt.Println(err)
+}}]],
+			{}
+		)
+	),
 })
