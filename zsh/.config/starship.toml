@@ -30,6 +30,9 @@ format = '([$all_status$ahead_behind]($style) )'
 [conda]
 style = "bold red"
 
+[aws]
+disabled = true
+
 [scala]
 disabled = true
 
