@@ -21,3 +21,4 @@ bindsym $mod+F8 exec brightnessctl -d intel_backlight s 100%
 bindsym ctrl+alt+f exec pcmanfm
 bindsym ctrl+alt+Escape exec systemctl suspend
 bindsym Print exec grim -g "$(slurp)" "${HOME}/Pictures/screenshot-$(date +'%F-%H-%M-%S').png"
+bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
