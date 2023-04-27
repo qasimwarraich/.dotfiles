@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -o errexit
+
+mkdir -p "/tmp/annotated_screenshot"
+FILE_PATH="/tmp/annotated_screenshot/screenshot-$(date +'%F-%H-%M-%S').png"
+
+grim -g "$(slurp)" "$FILE_PATH" && annotator $FILE_PATH && rm "$FILE_PATH"
