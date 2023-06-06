@@ -6,7 +6,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
 	"pyright",
-	"jedi_language_server",
+	-- "jedi_language_server",
 	"tsserver",
 	"clangd",
 	"vimls",
