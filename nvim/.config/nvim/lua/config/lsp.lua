@@ -21,6 +21,7 @@ local servers = {
 	"tailwindcss",
 	"denols",
 	"eslint",
+	"terraformls",
 }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
