@@ -39,4 +39,8 @@ if err != nil {{
 			{}
 		)
 	),
-})
+},
+ls.add_snippets("python", {
+    s({ trig = "prf", dscr = "better printf" },
+    fmt([[print(f"{}: {{{}}}")]], { rep(1),i(1, "var")}))
+}))
