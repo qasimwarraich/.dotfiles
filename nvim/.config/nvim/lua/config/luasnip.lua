@@ -20,6 +20,22 @@ ls.add_snippets("go", {
         fmt([[
 if err != nil {{
     log.Fatal(err)
-}}]]     , {})
-    )
-})
+}}]],
+			{}
+		)
+	),
+	s(
+		{ trig = "erp", name = "Print error", dscr = "Checks if err exists and print it" },
+		fmt(
+			[[
+if err != nil {{
+    fmt.Println(err)
+}}]],
+			{}
+		)
+	),
+},
+ls.add_snippets("python", {
+    s({ trig = "prf", dscr = "better printf" },
+    fmt([[print(f"{}: {{{}}}")]], { rep(1),i(1, "var")}))
+}))
