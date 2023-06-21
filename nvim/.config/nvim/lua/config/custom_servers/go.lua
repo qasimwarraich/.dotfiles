@@ -10,7 +10,6 @@ require("go").setup({
 	lsp_cfg = true, -- false: use your own lspconfig
 	lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
 	lsp_on_attach = attach, -- use on_attach from go.nvim
-	lsp_diag_virtual_text = { space = 0, prefix = "" },
 	lsp_diag_signs = true,
 	test_runner = "go",
 	dap_debug = true,
