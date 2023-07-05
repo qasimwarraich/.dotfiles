@@ -59,7 +59,7 @@ alias netrestart="sudo systemctl NetworkManager.service"
 
 alias g="git"
 alias gl="git log"
-alias glo="git log --pretty='%C(cyan)%ad %C(yellow)%h %C(blue)%aN %C(red)%d %Creset%s' --date-order --graph --date=iso"
+alias glo="git log --pretty='%C(cyan)%ad %C(yellow)%h %C(blue)%aN %C(red)%d %Creset%s' --all --date-order --graph --date=iso"
 alias ga="git add ."
 alias gf="git fetch"
 alias gfa="git fetch --all --prune"
