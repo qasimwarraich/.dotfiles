@@ -12,6 +12,7 @@ alias free='free -m'                      # show sizes in MB
 
 alias a="aerc"
 alias p="gopass"
+alias pc="gopass -c"
 alias pass="gopass"
 alias kc="kubectl"
 alias eb="exec bash"
