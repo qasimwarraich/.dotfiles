@@ -9,6 +9,11 @@ alias rm="rm -i"                          # confirm before deleting something
 alias mv="mv -i"                          # confirm before moving something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
+
+alias a="aerc"
+alias p="gopass"
+alias pass="gopass"
+alias kc="kubectl"
 alias eb="exec bash"
 alias ez="exec zsh"
 alias v="$EDITOR" 
