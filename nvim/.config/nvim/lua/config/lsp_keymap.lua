@@ -39,6 +39,8 @@ local on_attach = function(client, bufnr)
 				client.stop()
 			end
 		end
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
 	end
 end
 
