@@ -26,20 +26,22 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", '<space>f', vim.lsp.buf.format, bufopts)
 
-    local active_clients = vim.lsp.get_active_clients()
-    if client.name == 'denols' then
-        for _, client_ in pairs(active_clients) do
-            if client_.name == 'tsserver' then
-                client_.stop()
-            end
-        end
-    elseif client.name == 'tsserver' then
-        for _, client_ in pairs(active_clients) do
-            if client_.name == 'denols' then
-                client.stop()
-            end
-        end
-    end
+	local active_clients = vim.lsp.get_active_clients()
+	if client.name == "denols" then
+		for _, client_ in pairs(active_clients) do
+			if client_.name == "tsserver" then
+				client_.stop()
+			end
+		end
+	elseif client.name == "tsserver" then
+		for _, client_ in pairs(active_clients) do
+			if client_.name == "denols" then
+				client.stop()
+			end
+		end
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+	end
 end
 
 M.attach = on_attach

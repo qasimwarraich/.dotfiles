@@ -6,7 +6,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
 	"pyright",
-	-- "jedi_language_server",
 	"tsserver",
 	"clangd",
 	"vimls",
@@ -37,3 +36,4 @@ require("config.custom_servers.rust")
 require("config.custom_servers.deno")
 require("config.custom_servers.emmet")
 require("config.custom_servers.ltex")
+require("config.custom_servers.efm")
