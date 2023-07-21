@@ -6,10 +6,10 @@ require("ltex-ls").setup({
 	on_attach = attach,
 	capabilities = capabilities,
 	use_spellfile = false,
-	filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text" },
+	filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text", "mail" },
 	settings = {
 		ltex = {
-			enabled = { "latex", "tex", "bib", "markdown" },
+			enabled = { "latex", "tex", "bib", "markdown", "mail" },
 			language = "en-GB",
 			diagnosticSeverity = "information",
 			sentenceCacheSize = 2000,
