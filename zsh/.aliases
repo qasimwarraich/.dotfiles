@@ -21,6 +21,7 @@ alias v="$EDITOR"
 alias C="./a.out"
 alias M='make'
 alias P="python3"
+alias terry="terraform"
 alias nb="newsboat"
 alias ka="killall"
 alias ht="htop"
