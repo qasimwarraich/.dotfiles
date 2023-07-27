@@ -1,6 +1,26 @@
 local lspconfig = require("lspconfig")
 local attach = require("config.lsp_keymap").attach
 
+local web = {
+	{
+		formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
+		formatStdin = true,
+		lintCommand = "eslint --no-color --format unix --stdin",
+		lintStdin = true,
+		prefix = "eslint",
+		lintFormats = { "<text>(%l,%c): %trror %m", "<text>(%l,%c): %tarning %m" },
+		rootMarkers = {
+			".eslintrc",
+			".eslintrc.cjs",
+			".eslintrc.js",
+			".eslintrc.json",
+			".eslintrc.yaml",
+			".eslintrc.yml",
+			"package.json",
+		},
+	},
+}
+
 lspconfig.efm.setup({
 	init_options = { documentFormatting = true },
 	on_attach = attach,
@@ -32,44 +52,9 @@ lspconfig.efm.setup({
 					lintFormats = { "-:%l:%c: %trror: %m", "-:%l:%c: %tarning: %m", "-:%l:%c: %tote: %m" },
 				},
 			},
-			javascript = {
-				{
-					formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
-					formatStdin = true,
-					lintCommand = "eslint --no-color --format unix --stdin",
-					lintStdin = true,
-					prefix = "eslint",
-					lintFormats = { "<text>(%l,%c): %trror %m", "<text>(%l,%c): %tarning %m" },
-					rootMarkers = {
-						".eslintrc",
-						".eslintrc.cjs",
-						".eslintrc.js",
-						".eslintrc.json",
-						".eslintrc.yaml",
-						".eslintrc.yml",
-						"package.json",
-					},
-				},
-			},
-			typescript = {
-				{
-					formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
-					formatStdin = true,
-					lintCommand = "eslint --no-color --format unix --stdin",
-					lintStdin = true,
-					prefix = "eslint",
-					lintFormats = { "<text>(%l,%c): %trror %m", "<text>(%l,%c): %tarning %m" },
-					rootMarkers = {
-						".eslintrc",
-						".eslintrc.cjs",
-						".eslintrc.js",
-						".eslintrc.json",
-						".eslintrc.yaml",
-						".eslintrc.yml",
-						"package.json",
-					},
-				},
-			},
+			javascript = web,
+			typescript = web,
+			svelte = web,
 		},
 	},
 })
