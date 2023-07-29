@@ -21,15 +21,36 @@ local web = {
 	},
 }
 
+local prettier = {
+	{
+		formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
+		formatStdin = true,
+	},
+}
+
 lspconfig.efm.setup({
 	init_options = { documentFormatting = true },
 	on_attach = attach,
-	filetypes = { "python", "cpp", "lua", "javascript", "typescript", "svelte", "json", "sh" },
+	filetypes = {
+		"python",
+		"cpp",
+		"lua",
+		"javascript",
+		"typescript",
+		"svelte",
+		"json",
+		"sh",
+		"markdown",
+		"css",
+	},
 	settings = {
 		rootMarkers = { ".git/" },
 		languages = {
 			lua = {
-				{ formatCommand = "stylua --color Never --search-parent-directories - ", formatStdin = true },
+				{
+					formatCommand = "stylua --color Never --search-parent-directories - ",
+					formatStdin = true,
+				},
 			},
 			python = {
 				{
@@ -49,12 +70,19 @@ lspconfig.efm.setup({
 					lintCommand = "shellcheck --color=never --format=gcc -",
 					lintStdin = true,
 					prefix = "shellcheck",
-					lintFormats = { "-:%l:%c: %trror: %m", "-:%l:%c: %tarning: %m", "-:%l:%c: %tote: %m" },
+					lintFormats = {
+						"-:%l:%c: %trror: %m",
+						"-:%l:%c: %tarning: %m",
+						"-:%l:%c: %tote: %m",
+					},
 				},
 			},
 			javascript = web,
 			typescript = web,
 			svelte = web,
+			json = prettier,
+            markdown = prettier,
+			css = prettier,
 		},
 	},
 })
