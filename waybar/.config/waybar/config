@@ -1,0 +1,130 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "sway/window"
+  ],
+  "modules-center": [
+  ],
+  "modules-right": [
+    "custom/notifications",
+    "custom/seperator",
+    "disk",
+    "custom/seperator",
+    "memory",
+    "custom/seperator",
+    "network",
+    "custom/seperator",
+    "temperature",
+    "custom/seperator",
+    "backlight",
+    "custom/seperator",
+    "pulseaudio",
+    "custom/seperator",
+    "battery",
+    "custom/seperator",
+    "clock",
+    "custom/seperator",
+    "tray"
+  ],
+  "sway/window": {
+      "format": " {}",
+      "max-length": 50
+  },
+  "sway/workspaces": {
+      "smooth-scrolling-threshold": 0.5
+  },
+  "battery": {
+    "format": "{icon}{capacity}%",
+    "format-charging": "⚡{capacity}%",
+    "format-icons": [
+      //"",
+      //"",
+      //"",
+      //"",
+     // ""
+      "🪫",
+       "🔋"
+    ]
+  },
+  "clock": {
+    "interval": 5,
+    "format": "{:%Y-%m-%d %H:%M:%OS}",
+    "format-alt": "{:%a, %d. %b  %H:%M}"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{used}GiB",
+    "max-length": 10
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 2
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}{percent}%",
+    "format-icons": [
+     // "",
+     // ""
+     "🔆"
+    ]
+  },
+  "custom/seperator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/notifications": {
+    "format": "{}",
+    "exec": "notification-status",
+    "interval": 60,
+    "signal": 8,
+    "on-click": "dunst_toggle",
+    "tooltip": false
+  },
+  "temperature": {
+      // "thermal-zone": 2,
+      // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+       "critical-threshold": 80,
+      // "format-critical": "{temperatureC}°C ",
+      "format": "T: {temperatureC}°C",
+      "interval": "3"
+  },
+  "disk": {
+      "interval": 30,
+      "format": "{free}",
+      "path": "/home"
+  },
+  "network": {
+      "format": "{ifname}",
+      "interval": 5,
+      "format-wifi": "{essid} {bandwidthTotalBits} ({signalStrength}%)  ",
+      "format-ethernet": "{ipaddr}/{cidr}  ",
+      "format-disconnected": " down ", //An empty format will hide the module.
+      "tooltip-format": "{ifname} via {gwaddr} ",
+      "tooltip-format-wifi": "{essid} {ipaddr} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 50
+  },
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", ""]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+      "ignored-sinks": ["Easy Effects Sink"]
+  }
+}
