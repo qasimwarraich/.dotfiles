@@ -41,6 +41,7 @@ lspconfig.efm.setup({
 		"json",
 		"sh",
 		"markdown",
+        "html",
 		"css",
 	},
 	settings = {
@@ -82,6 +83,7 @@ lspconfig.efm.setup({
 			svelte = web,
 			json = prettier,
             markdown = prettier,
+			html = prettier,
 			css = prettier,
 		},
 	},
