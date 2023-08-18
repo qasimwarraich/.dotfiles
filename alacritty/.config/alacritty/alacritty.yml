@@ -62,7 +62,7 @@ colors:
 
   # Bright colors
   bright:
-    black: "#000000"
+    black: "#555753"
     red: "#ff0000"
     green: "#00ff00"
     yellow: "#ffff00"
