@@ -27,16 +27,28 @@ style = "bold red"
 style = "bold yellow"
 format = '([$all_status$ahead_behind]($style) )'
 
-[conda]
-style = "bold red"
+[package]
+disabled = true
 
 [aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
 disabled = true
 
 [scala]
 disabled = true
 
-[gcloud]
+[golang]
+disabled = true
+
+[rust]
 disabled = true
 
 [java]
