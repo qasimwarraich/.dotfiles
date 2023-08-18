@@ -250,8 +250,6 @@ output eDP-1 scale 1.5
 exec /home/spam/.scripts/idle_sway
 exec udiskie &
 exec_always kanshi
-exec keepassxc
-exec nextcloud
 exec nm-applet --indicator
 exec blueman-applet
 exec_always wl-paste --watch cliphist store
