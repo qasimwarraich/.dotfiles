@@ -40,7 +40,7 @@ disabled = true
 disabled = true
 
 [python]
-disabled = true
+format = '[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [scala]
 disabled = true
