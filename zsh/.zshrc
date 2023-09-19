@@ -53,7 +53,6 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 #Plugins
-source ~/.config/zsh_config/alias-finder.zsh
 source ~/.config/zsh_config/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/spam/.config/zsh_config/fzf-tab/fzf-tab.plugin.zsh
 source /home/spam/.config/zsh_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
