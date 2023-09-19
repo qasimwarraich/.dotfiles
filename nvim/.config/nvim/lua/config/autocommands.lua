@@ -9,7 +9,7 @@ autocmd("TextYankPost", {
 })
 
 -- Run gofmt + goimport on save
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+-- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
 -- Run Neoformat on svelte
 vim.api.nvim_exec([[ autocmd BufWritePre *.svelte :Neoformat<CR>]], false)
