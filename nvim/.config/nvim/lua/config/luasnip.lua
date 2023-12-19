@@ -39,6 +39,16 @@ if err != nil {{
 			{}
 		)
 	),
+	s(
+		{ trig = "rerr", name = "Return error", dscr = "Checks if err exists and return it" },
+		fmt(
+			[[
+if err != nil {{
+    return err
+}}]],
+			{}
+		)
+	),
 },
 ls.add_snippets("python", {
     s({ trig = "prf", dscr = "better printf" },
