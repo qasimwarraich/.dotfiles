@@ -1,3 +1,3 @@
 #! /bin/bash
 
-dunstctl set-paused toggle
+dunstctl set-paused toggle && pkill -SIGUSR8 waybar
