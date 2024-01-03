@@ -242,7 +242,12 @@ input 1133:50184:Logitech_USB_Trackball {
     scroll_method on_button_down
     scroll_button 275
     middle_emulation true
-    }
+}
+
+for_window [title="Floating Window - Show Me The Key"] {
+  floating enable
+  border none
+}
 
 output "*" bg /home/spam/.dotfiles/wallpapers/hiroshi-path.png fill
 output eDP-1 scale 1.5
@@ -259,4 +264,3 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 exec waybar
-
