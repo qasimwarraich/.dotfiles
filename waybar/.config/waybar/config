@@ -104,6 +104,7 @@
       "format-wifi": "{essid} {bandwidthTotalBits} ({signalStrength}%)  ",
       "format-ethernet": "{ipaddr}/{cidr}  ",
       "format-disconnected": " down ", //An empty format will hide the module.
+      "on-click": "alacritty -e nmtui",
       "tooltip-format": "{ifname} via {gwaddr} ",
       "tooltip-format-wifi": "{essid} {ipaddr} ({signalStrength}%) ",
       "tooltip-format-ethernet": "{ifname} ",
