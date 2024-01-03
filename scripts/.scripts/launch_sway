@@ -7,4 +7,4 @@ export XDG_SESSION_DESKTOP=sway
 export GTK_THEME=Adwaita:dark
 export MOZ_ENABLE_WAYLAND=1
 
-exec sway
+XDG_CURRENT_DESKTOP=sway dbus-run-session sway
