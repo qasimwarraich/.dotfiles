@@ -2,7 +2,8 @@
 
 set -o errexit
 
-mkdir -p "/tmp/annotated_screenshot"
-FILE_PATH="/tmp/annotated_screenshot/screenshot-$(date +'%F-%H-%M-%S').png"
+# mkdir -p "/tmp/annotated_screenshot"
+# FILE_PATH="/tmp/annotated_screenshot/screenshot-$(date +'%F-%H-%M-%S').png"
 
-grim -g "$(slurp)" "$FILE_PATH" && annotator $FILE_PATH && rm "$FILE_PATH"
+# grim -g "$(slurp)" "$FILE_PATH" && annotator $FILE_PATH && rm "$FILE_PATH"
+grim -g "$(slurp -o -c '#ff0000ff')" - | satty --filename - --fullscreen --output-filename ~/Pictures/screenshot-"$(date '+%F-%H:%M:%S')".png
