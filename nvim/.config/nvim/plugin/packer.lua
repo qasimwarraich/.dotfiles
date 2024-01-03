@@ -1,6 +1,7 @@
 function get_config(name)
 	return string.format('require("config/%s")', name)
 end
+
 function get_default(name)
 	return string.format('require("%s").setup()', name)
 end
