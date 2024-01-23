@@ -82,7 +82,7 @@
     "exec": "notification-status",
     "interval": 60,
     "signal": 8,
-    "on-click": "dunst_toggle",
+    "on-click": "dunst_toggle && pkill -SIGRTMIN+8 waybar",
     "tooltip": false
   },
   "temperature": {
