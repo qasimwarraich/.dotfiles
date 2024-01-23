@@ -67,7 +67,7 @@ save_to_clipboard = false
 decorations = "none"
 dynamic_padding = true
 dynamic_title = true
-opacity = 1
+opacity = 1.0
 title = "🌈🌈🌈"
 
 [window.padding]
