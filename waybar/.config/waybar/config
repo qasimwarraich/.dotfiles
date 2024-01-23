@@ -10,23 +10,23 @@
   ],
   "modules-right": [
     "custom/notifications",
-    "custom/seperator",
+    "custom/separator",
     "disk",
-    "custom/seperator",
+    "custom/separator",
     "memory",
-    "custom/seperator",
+    "custom/separator",
     "network",
-    "custom/seperator",
+    "custom/separator",
     "temperature",
-    "custom/seperator",
+    "custom/separator",
     "backlight",
-    "custom/seperator",
+    "custom/separator",
     "pulseaudio",
-    "custom/seperator",
+    "custom/separator",
     "battery",
-    "custom/seperator",
+    "custom/separator",
     "clock",
-    "custom/seperator",
+    "custom/separator",
     "tray"
   ],
   "sway/window": {
@@ -72,7 +72,7 @@
      "🔆"
     ]
   },
-  "custom/seperator": {
+  "custom/separator": {
     "format": "|",
     "interval": "once",
     "tooltip": false
