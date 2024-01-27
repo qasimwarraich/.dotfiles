@@ -6,27 +6,36 @@ function get_default(name)
 	return string.format('require("%s").setup()', name)
 end
 
-vim.cmd([[packadd packer.nvim]]) -- Only required if you have packer configured as `opt`
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require("packer").startup(function(use)
-	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
+return {
 
 	-- LSP
-	use({
+	{
 		"neovim/nvim-lspconfig",
-		requires = {
+		dependencies = {
 			"lervag/vimtex",
 			"ray-x/go.nvim",
 			"simrat39/rust-tools.nvim",
 		},
-	})
+	},
 
 	-- CMP
-	use({
+	{
 		"hrsh7th/nvim-cmp",
-		requires = {
-			{ "tzachar/cmp-tabnine", run = "./install.sh" },
+		dependencies = {
+			{ "tzachar/cmp-tabnine", build = "./install.sh" },
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-buffer",
@@ -41,47 +50,45 @@ return require("packer").startup(function(use)
 			"f3fora/cmp-spell",
 		},
 		config = get_config("cmp"),
-	})
-
-	use({ "vigoux/ltex-ls.nvim" })
-
+	},
+	"vigoux/ltex-ls.nvim",
 	-- Debugger
-	use("mfussenegger/nvim-dap")
-	use("rcarriga/nvim-dap-ui")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("mfussenegger/nvim-dap-python")
+	"mfussenegger/nvim-dap",
+	"rcarriga/nvim-dap-ui",
+	"theHamsta/nvim-dap-virtual-text",
+	"mfussenegger/nvim-dap-python",
 
 	-- Formatter
-	use("sbdchd/neoformat")
+	"sbdchd/neoformat",
 
 	-- Colorscheme
-	use("rebelot/kanagawa.nvim")
+	"rebelot/kanagawa.nvim",
 
 	-- Treesitter
-	use({
+	{
 		"nvim-treesitter/nvim-treesitter",
-		requires = {
+		dependencies = {
 			"p00f/nvim-ts-rainbow",
 			"nvim-treesitter/nvim-treesitter-context",
 		},
 		run = ":TSUpdate",
-	})
+	},
 
 	-- Telescope
-	use({
+	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.3",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
-	})
+	},
 
 	-- Testing
-	use("vim-test/vim-test")
-	use({
+	"vim-test/vim-test",
+	{
 		"nvim-neotest/neotest",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
@@ -90,12 +97,12 @@ return require("packer").startup(function(use)
 			"rouge8/neotest-rust",
 			"haydenmeade/neotest-jest",
 		},
-	})
+	},
 
 	-- Databases
-	use({
+	{
 		"tpope/vim-dadbod",
-		requires = {
+		dependencies = {
 			"kristijanhusak/vim-dadbod-ui",
 			{
 				"kristijanhusak/vim-dadbod-completion",
@@ -108,29 +115,29 @@ return require("packer").startup(function(use)
 				end,
 			},
 		},
-	})
+	},
 
 	-- Usefull Stuff
-	use("mbbill/undotree")
-	use("theprimeagen/harpoon")
-	use({ "kylechui/nvim-surround", config = get_default("nvim-surround") })
-	use("tpope/vim-fugitive")
-	use("lukas-reineke/indent-blankline.nvim")
-	use({ "lewis6991/gitsigns.nvim", config = get_default("gitsigns") })
-	use({ "numToStr/Comment.nvim", config = get_default("Comment") })
-	use({
+	"mbbill/undotree",
+	"theprimeagen/harpoon",
+	{ "kylechui/nvim-surround", config = get_default("nvim-surround") },
+	"tpope/vim-fugitive",
+	"lukas-reineke/indent-blankline.nvim",
+	{ "lewis6991/gitsigns.nvim", config = get_default("gitsigns") },
+	{ "numToStr/Comment.nvim", config = get_default("Comment") },
+	{
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
 		setup = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
-	})
-	use({
+	},
+	{
 		"kosayoda/nvim-lightbulb",
-		requires = "antoinemadec/FixCursorHold.nvim",
-	})
-	use({
+		dependencies = "antoinemadec/FixCursorHold.nvim",
+	},
+	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
 		-- optionally, override the default options:
 		config = function()
@@ -138,10 +145,11 @@ return require("packer").startup(function(use)
 				color_square_width = 2,
 			})
 		end,
-	})
-
-	use({
+	},
+	{
 		"uga-rosa/ccc.nvim",
-		config = require("ccc").setup({ highlighter = { auto_enable = true } }),
-	})
-end)
+		config = function()
+			require("ccc").setup({ highlighter = { auto_enable = true, lsp = true } })
+		end,
+	},
+}
