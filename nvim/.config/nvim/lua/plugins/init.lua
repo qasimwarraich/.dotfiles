@@ -1,33 +1,15 @@
-function get_config(name)
-	return string.format('require("config/%s")', name)
-end
-
-function get_default(name)
+local function get_default(name)
 	return string.format('require("%s").setup()', name)
 end
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
 return {
-
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"lervag/vimtex",
 			"ray-x/go.nvim",
 			"simrat39/rust-tools.nvim",
+			"vigoux/ltex-ls.nvim",
 		},
 	},
 
@@ -49,9 +31,9 @@ return {
 			"rafamadriz/friendly-snippets",
 			"f3fora/cmp-spell",
 		},
-		config = get_config("cmp"),
 	},
-	"vigoux/ltex-ls.nvim",
+	"lervag/vimtex",
+
 	-- Debugger
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
@@ -118,13 +100,13 @@ return {
 	},
 
 	-- Usefull Stuff
+	"tpope/vim-fugitive",
+	"lewis6991/gitsigns.nvim",
 	"mbbill/undotree",
 	"theprimeagen/harpoon",
-	{ "kylechui/nvim-surround", config = get_default("nvim-surround") },
-	"tpope/vim-fugitive",
 	"lukas-reineke/indent-blankline.nvim",
-	{ "lewis6991/gitsigns.nvim", config = get_default("gitsigns") },
 	{ "numToStr/Comment.nvim", config = get_default("Comment") },
+	{ "kylechui/nvim-surround", config = get_default("nvim-surround") },
 	{
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
@@ -139,7 +121,6 @@ return {
 	},
 	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
-		-- optionally, override the default options:
 		config = function()
 			require("tailwindcss-colorizer-cmp").setup({
 				color_square_width = 2,
