@@ -213,16 +213,17 @@ set $gray     "#2F343A"
 #     }
 #     status_command i3status
 # }
+
 for_window [class=".*"] border pixel 2
 
 
-#                       border  background      text    indicator   childborder
-client.focused          $gold   $black           $white  $purple       $gold
-# client.focused_inactive $base02 $base02    $base03 $base0D
-# client.unfocused        $base02 $base02    $base03 $base0D
-# client.urgent           $base02 $base0D    $base00 $base0D
-gaps outer 4
-gaps inner 4
+#                           border  background  text    indicator  childborder
+client.focused              $purple $black      $white  $purple    $purple
+# client.focused_inactive   $base02 $base02     $base03 $base0D
+# client.unfocused          $base02 $base02     $base03 $base0D
+# client.urgent             $base02 $base0D     $base00 $base0D
+# gaps outer 4
+# gaps inner 4
 
 include mappings
 
