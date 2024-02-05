@@ -11,8 +11,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
 
 bindsym $mod+w exec firefox
 bindsym $mod+shift+w exec brave
-bindsym $mod+shift+p exec cliphist list | bemenu -l 10 | cliphist decode | wl-copy
-bindsym $mod+p exec bemenu-run -l 10
+bindsym $mod+shift+p exec cliphist list | bemenu -l 10 --binding vim | cliphist decode | wl-copy
+bindsym $mod+p exec bemenu-run -l 10 --binding vim
 bindsym $mod+e exec ~/.scripts/emoji-bemenu
 bindsym $mod+Shift+Escape exec ~/.scripts/poweroptions-bemenu
 bindsym ctrl+alt+d exec ~/.scripts/dunst_options_bemenu

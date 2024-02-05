@@ -2,4 +2,4 @@
 
 EMOJIFILE='/usr/share/unicode/emoji/emoji-test.txt'
 
-cat $EMOJIFILE | awk -F \; '{print $2}' | awk '{$1=$2=$4=""; print $0}' | awk NF | bemenu -i -l 20 | awk '{print $1}' | tr -d '\n' | wl-copy
+cat $EMOJIFILE | awk -F \; '{print $2}' | awk '{$1=$2=$4=""; print $0}' | awk NF | bemenu -i -l 20 --binding vim | awk '{print $1}' | tr -d '\n' | wl-copy

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OPT=$(echo -e "Lock-Screen\nExit-Sway\nSuspend\nReboot\nShutdown\nCancel" | bemenu -i -l 6 -p "Power Options:")
+OPT=$(echo -e "Lock-Screen\nExit-Sway\nSuspend\nReboot\nShutdown\nCancel" | bemenu -i -l 6 --binding vim -p "Power Options:")
 
 case $OPT in
 Lock-Screen) swaylock ;;

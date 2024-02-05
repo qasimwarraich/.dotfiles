@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-OPT=$(echo -e "Context\nToggle\nClear\nClear-All\nPop\nStatus\nCancel" | bemenu -l 8 -p "Dunst Paused? : $(dunstctl is-paused)")
+OPT=$(echo -e "Context\nToggle\nClear\nClear-All\nPop\nStatus\nCancel" | bemenu -l 8 --binding vim -p "Dunst Paused? : $(dunstctl is-paused)")
 
 case $OPT in
         # Lock-Screen) betterlockscreen -l -t "Enter Your Password";;
