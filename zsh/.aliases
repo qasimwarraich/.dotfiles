@@ -34,6 +34,9 @@ alias Spam="paru -Slq | fzf -m --preview 'paru -Si {1}' | xargs -ro paru -S"
 alias rsn="pacman -Qet | fzf -m --preview 'pacman -Si {1}'| awk '{print \$1}' | sudo xargs -ro pacman -Rsn"
 alias update="sudo pacman -Syu"
 
+alias t="task"
+alias tab="task add project:bespinian"
+
 alias ..="cd .."
 alias cd.="cd ${HOME}/.dotfiles"
 alias cda="cd ${HOME}/Clones/ansible/Ansible"
