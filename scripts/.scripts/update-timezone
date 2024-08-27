@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+set -euo pipefail
+
+CURRENT=$(timedatectl status | grep Time | awk '{$1=$1}1' | sed "s/Time zone: //")
+NEW=$(curl -s https://ipapi.co/timezone)
+
+echo "Updating timezone from $CURRENT to $NEW"
+
+timedatectl set-timezone "$NEW"
+
+
