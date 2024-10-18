@@ -5,6 +5,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
+	"gopls",
+	"golangci_lint_ls",
 	"pyright",
 	"ts_ls",
 	"clangd",
