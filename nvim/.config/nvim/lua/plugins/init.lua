@@ -67,7 +67,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-			"p00f/nvim-ts-rainbow",
 			"nvim-treesitter/nvim-treesitter-context",
 		},
 		run = ":TSUpdate",
