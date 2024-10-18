@@ -8,9 +8,13 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"ray-x/go.nvim",
-			"simrat39/rust-tools.nvim",
 			"vigoux/ltex-ls.nvim",
 		},
+	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^5",
+		lazy = false, -- This plugin is already lazy
 	},
 
 	-- CMP
