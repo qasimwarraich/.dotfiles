@@ -1,6 +1,8 @@
 local lspconfig = require("lspconfig")
 local attach = require("config.lsp_keymap").attach
 
+
+local languages = require('efmls-configs.defaults').languages()
 local web = {
 	{
 		formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
@@ -46,45 +48,46 @@ lspconfig.efm.setup({
 	},
 	settings = {
 		rootMarkers = { ".git/" },
-		languages = {
-			lua = {
-				{
-					formatCommand = "stylua --color Never --search-parent-directories - ",
-					formatStdin = true,
-				},
-			},
-			python = {
-				{
-					formatCommand = "black --no-color -q  -",
-					formatStdin = true,
-					lintCommand = "flake8 -",
-					lintStdin = true,
-					prefix = "flake8",
-					lintFormats = { "stdin:%l:%c: %t%n %m" },
-					rootMarkers = { "setup.cfg", "tox.ini", ".flake8" },
-				},
-			},
-			sh = {
-				{
-					formatCommand = "shfmt -",
-					formatStdin = true,
-					lintCommand = "shellcheck --color=never --format=gcc -",
-					lintStdin = true,
-					prefix = "shellcheck",
-					lintFormats = {
-						"-:%l:%c: %trror: %m",
-						"-:%l:%c: %tarning: %m",
-						"-:%l:%c: %tote: %m",
-					},
-				},
-			},
-			javascript = web,
-			typescript = web,
-			svelte = web,
-			json = prettier,
-            markdown = prettier,
-			html = prettier,
-			css = prettier,
-		},
+        languages = languages,
+		-- languages = {
+		-- 	lua = {
+		-- 		{
+		-- 			formatCommand = "stylua --color Never --search-parent-directories - ",
+		-- 			formatStdin = true,
+		-- 		},
+		-- 	},
+		-- 	python = {
+		-- 		{
+		-- 			formatCommand = "black --no-color -q  -",
+		-- 			formatStdin = true,
+		-- 			lintCommand = "flake8 -",
+		-- 			lintStdin = true,
+		-- 			prefix = "flake8",
+		-- 			lintFormats = { "stdin:%l:%c: %t%n %m" },
+		-- 			rootMarkers = { "setup.cfg", "tox.ini", ".flake8" },
+		-- 		},
+		-- 	},
+		-- 	sh = {
+		-- 		{
+		-- 			formatCommand = "shfmt -",
+		-- 			formatStdin = true,
+		-- 			lintCommand = "shellcheck --color=never --format=gcc -",
+		-- 			lintStdin = true,
+		-- 			prefix = "shellcheck",
+		-- 			lintFormats = {
+		-- 				"-:%l:%c: %trror: %m",
+		-- 				"-:%l:%c: %tarning: %m",
+		-- 				"-:%l:%c: %tote: %m",
+		-- 			},
+		-- 		},
+		-- 	},
+		-- 	javascript = web,
+		-- 	typescript = web,
+		-- 	svelte = web,
+		-- 	json = prettier,
+  --           markdown = prettier,
+		-- 	html = prettier,
+		-- 	css = prettier,
+		-- },
 	},
 })

@@ -10,6 +10,12 @@ return {
 			"vigoux/ltex-ls.nvim",
 		},
 	},
+	{
+		"creativenull/efmls-configs-nvim",
+		version = "v1.x.x", -- version is optional, but recommended
+		dependencies = { "neovim/nvim-lspconfig" },
+	},
+
 	"mfussenegger/nvim-lint",
 	{
 		"ray-x/go.nvim",
