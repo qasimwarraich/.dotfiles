@@ -11,6 +11,7 @@ export KEYTIMEOUT=1
 
 zstyle :compinstall filename '/home/spam/.zshrc'
 
+autoload bashcompinit && bashcompinit
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 compinit
@@ -68,6 +69,8 @@ if [ -f '/home/spam/Clones/google-cloud-sdk/path.zsh.inc' ]; then . '/home/spam/
 
 #The next line enables shell command completion for gcloud.
 if [ -f '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/spam/Clones/google-cloud-sdk/completion.zsh.inc'; fi
+
+complete -C '/usr/bin/aws_completer' aws
 
 #Zoxide
 eval "$(zoxide init zsh)"
