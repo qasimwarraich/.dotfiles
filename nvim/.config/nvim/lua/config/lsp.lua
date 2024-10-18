@@ -31,9 +31,9 @@ end
 
 -- Custom configs
 require("config.custom_servers.lua_ls")
-require("config.custom_servers.go")
+-- require("config.custom_servers.go")
 require("config.custom_servers.rust")
 require("config.custom_servers.deno")
 require("config.custom_servers.emmet")
-require("config.custom_servers.ltex")
+-- require("config.custom_servers.ltex")
 require("config.custom_servers.efm")
