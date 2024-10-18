@@ -8,7 +8,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", n
 
 dap.adapters.lldb = {
 	type = "executable",
-	command = "/usr/bin/lldb-vscode",
+	command = "/usr/bin/lldb-dap",
 	name = "lldb",
 }
 
@@ -67,4 +67,4 @@ dap.configurations.cpp = {
 }
 
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+-- dap.configurations.rust = dap.configurations.cpp
