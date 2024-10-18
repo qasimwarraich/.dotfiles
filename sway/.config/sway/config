@@ -250,6 +250,8 @@ for_window [title="Floating Window - Show Me The Key"] {
   border none
 }
 
+for_window [app_id="firefox"] inhibit_idle fullscreen
+
 output "*" bg /home/spam/.dotfiles/wallpapers/hiroshi-path.png fill
 output eDP-1 scale 1.5
 
