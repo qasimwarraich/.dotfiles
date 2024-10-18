@@ -60,6 +60,7 @@ alias vrc="$EDITOR ~/.dotfiles/$EDITOR/.config/$EDITOR/"
 alias zrc="$EDITOR ~/.zshrc"
 alias arc="$EDITOR ~/.aliases"
 alias prc="$EDITOR ~/.config/zshscripts/spaceship.zsh"
+alias vac="$EDITOR ~/.aws/credentials"
 
 alias ta='tmux a || tmux'
 alias ts='tmux-sessionizer'
