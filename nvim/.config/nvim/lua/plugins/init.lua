@@ -10,6 +10,7 @@ return {
 			"vigoux/ltex-ls.nvim",
 		},
 	},
+	"mfussenegger/nvim-lint",
 	{
 		"ray-x/go.nvim",
 		dependencies = { -- optional packages
