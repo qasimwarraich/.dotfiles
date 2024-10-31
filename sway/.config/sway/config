@@ -230,7 +230,7 @@ include mappings
 input "type:keyboard" {
     xkb_layout us
     xkb_options "caps:escape,compose:ralt"
-    repeat_rate 100
+    repeat_rate 10
 }
 
 input 2362:628:PIXA3854:00_093A:0274_Touchpad {
