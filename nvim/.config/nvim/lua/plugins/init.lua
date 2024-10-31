@@ -97,7 +97,6 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
-			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-go",
 			"nvim-neotest/neotest-python",
 			"rouge8/neotest-rust",
@@ -141,7 +140,11 @@ return {
 	},
 	{
 		"kosayoda/nvim-lightbulb",
-		dependencies = "antoinemadec/FixCursorHold.nvim",
+		config = function()
+			require("nvim-lightbulb").setup({
+				autocmd = { enabled = true },
+			})
+		end,
 	},
 	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
