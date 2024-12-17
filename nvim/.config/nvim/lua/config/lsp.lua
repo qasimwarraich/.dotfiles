@@ -24,6 +24,7 @@ local servers = {
 	"eslint",
 	"terraformls",
 	"ruff",
+	"sourcekit",
 }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
