@@ -80,5 +80,7 @@ complete -C '/usr/bin/aws_completer' aws
 #Zoxide
 eval "$(zoxide init zsh)"
 
+eval "$(/usr/bin/mise activate zsh)"
+
 #Prompt
 eval "$(starship init zsh)"
