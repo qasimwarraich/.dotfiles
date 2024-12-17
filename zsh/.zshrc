@@ -77,6 +77,10 @@ bindkey "^X^E" edit-command-line
 
 complete -C '/usr/bin/aws_completer' aws
 
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+
 #Zoxide
 eval "$(zoxide init zsh)"
 
