@@ -37,6 +37,7 @@ alias update="sudo pacman -Syu"
 
 alias t="task"
 alias tab="task add project:bespinian"
+alias tpb="task project:bespinian"
 
 alias ..="cd .."
 alias cd.="cd ${HOME}/.dotfiles"
