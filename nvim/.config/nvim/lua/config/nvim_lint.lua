@@ -1,5 +1,6 @@
 require('lint').linters_by_ft = {
   python = {'pylint', 'mypy'},
+  sh = {'shellcheck'},
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
