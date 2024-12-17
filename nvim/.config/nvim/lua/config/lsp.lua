@@ -23,7 +23,7 @@ local servers = {
 	"denols",
 	"eslint",
 	"terraformls",
-	"ruff_lsp",
+	"ruff",
 }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
