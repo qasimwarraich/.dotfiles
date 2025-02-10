@@ -54,10 +54,22 @@ ls.add_snippets(
 				{}
 			)
 		),
+		s(
+			{ trig = "pps", name = "Pretty print struct", dscr = "Pretty prints structs using json.MarshalIndent" },
+			fmt(
+				[[
+                // DEBUG: Pretty Print Struct
+                {{
+                pps, _ := json.MarshalIndent({}, "", "\t")
+                fmt.Printf("\n\n {}: \n %+v", string(pps))
+                }}
+                ]],
+				{ rep(1), i(1, "var") }
+			)
+		),
 	},
 
 	ls.add_snippets("python", {
 		s({ trig = "prf", dscr = "better printf" }, fmt([[print(f"{}: {{{}}}")]], { rep(1), i(1, "var") })),
 	})
 )
-
