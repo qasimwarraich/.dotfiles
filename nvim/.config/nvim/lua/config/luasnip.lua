@@ -18,39 +18,46 @@ ls.add_snippets("rust", {
 	}),
 })
 
-ls.add_snippets("go", {
-	s(
-		{ trig = "erf", name = "Log fatal error", dscr = "Checks if err exists and logs fatally" },
-		fmt(
-			[[
-if err != nil {{
-    log.Fatal(err)
-}}]],
-			{}
-		)
-	),
-	s(
-		{ trig = "erp", name = "Print error", dscr = "Checks if err exists and print it" },
-		fmt(
-			[[
-if err != nil {{
-    fmt.Println(err)
-}}]],
-			{}
-		)
-	),
-	s(
-		{ trig = "rerr", name = "Return error", dscr = "Checks if err exists and return it" },
-		fmt(
-			[[
-if err != nil {{
-    return err
-}}]],
-			{}
-		)
-	),
-},
-ls.add_snippets("python", {
-    s({ trig = "prf", dscr = "better printf" },
-    fmt([[print(f"{}: {{{}}}")]], { rep(1),i(1, "var")}))
-}))
+ls.add_snippets(
+	"go",
+	{
+		s(
+			{ trig = "erf", name = "Log fatal error", dscr = "Checks if err exists and logs fatally" },
+			fmt(
+				[[
+                if err != nil {{
+                    log.Fatal(err)
+                }}
+                ]],
+				{}
+			)
+		),
+		s(
+			{ trig = "erp", name = "Print error", dscr = "Checks if err exists and print it" },
+			fmt(
+				[[
+                if err != nil {{
+                    fmt.Println(err)
+                }}
+                ]],
+				{}
+			)
+		),
+		s(
+			{ trig = "rerr", name = "Return error", dscr = "Checks if err exists and return it" },
+			fmt(
+				[[
+                if err != nil {{
+                    return err
+                }}
+                ]],
+				{}
+			)
+		),
+	},
+
+	ls.add_snippets("python", {
+		s({ trig = "prf", dscr = "better printf" }, fmt([[print(f"{}: {{{}}}")]], { rep(1), i(1, "var") })),
+	})
+)
+
