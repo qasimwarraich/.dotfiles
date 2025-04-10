@@ -28,3 +28,6 @@ bindsym ctrl+alt+Escape exec systemctl suspend
 bindsym Print exec grim -g "$(slurp)" "${HOME}/Pictures/screenshot-$(date +'%F-%H-%M-%S').png"
 bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
 bindsym $mod+Shift+Print exec ~/.scripts/annotated_screenshot
+
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
