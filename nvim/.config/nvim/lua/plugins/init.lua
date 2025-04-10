@@ -68,8 +68,9 @@ return {
 	-- Formatter
 	"sbdchd/neoformat",
 
-	-- Colorscheme
+	-- Colorschemes
 	"rebelot/kanagawa.nvim",
+	"rose-pine/neovim",
 
 	-- Treesitter
 	{
