@@ -1,8 +1,8 @@
 local attach = require("config.lsp_keymap").attach
 
 require("go").setup({
-	goimport = "gopls", -- if set to 'gopls' will use golsp format
-	gofmt = "gofumpt", -- if set to gopls will use golsp format
+	goimports = "gopls", -- if set to 'gopls' will use golsp format
+	gofmt = "golines",
 	max_line_len = 120,
 	tag_transform = false,
 	test_dir = "",
