@@ -3,6 +3,7 @@ vim.diagnostic.config({
 	update_in_insert = true,
 	underline = true,
 	severity_sort = true,
+	jump = { float = true },
 	float = {
 		source = "always",
 		focusable = false,
