@@ -167,4 +167,9 @@ return {
 			require("ccc").setup({ highlighter = { auto_enable = true, lsp = true } })
 		end,
 	},
+	{
+		"chrisgrieser/nvim-lsp-endhints",
+		event = "LspAttach",
+		opts = {}, 
+	},
 }
