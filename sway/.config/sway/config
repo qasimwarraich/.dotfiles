@@ -225,6 +225,7 @@ client.focused              $purple $black      $white  $purple    $purple
 # gaps outer 4
 # gaps inner 4
 
+include /etc/sway/config.d/*
 include mappings
 
 input "type:keyboard" {
@@ -263,7 +264,4 @@ exec blueman-applet
 exec_always wl-paste --watch cliphist store
 exec_always wl-paste --type image --watch cliphist store
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
 exec waybar
