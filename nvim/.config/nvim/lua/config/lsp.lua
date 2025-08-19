@@ -5,7 +5,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
-	-- "gopls",
 	"golangci_lint_ls",
 	"pyright",
 	"ts_ls",
@@ -25,7 +24,7 @@ local servers = {
 	"terraformls",
 	"ruff",
 	"sourcekit",
-    "tinymist",
+	"tinymist",
 }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
@@ -36,9 +35,7 @@ end
 
 -- Custom configs
 require("config.custom_servers.lua_ls")
--- require("config.custom_servers.go")
 require("config.custom_servers.rust")
 require("config.custom_servers.deno")
 require("config.custom_servers.emmet")
--- require("config.custom_servers.ltex")
 require("config.custom_servers.efm")
