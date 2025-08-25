@@ -23,7 +23,6 @@ alias C="./a.out"
 alias M='make'
 alias P="python3"
 alias terry="terraform"
-alias pman="DBUS_SESSION_BUS_ADDRESS= podman"
 alias ka="killall"
 alias ht="htop"
 alias xa="xargs"
