@@ -1,4 +1,4 @@
-local nvim_lsp = require("lspconfig")
+local nvim_lsp = vim.lsp.config
 local lsp_keymap = require("config.lsp_keymap")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -27,10 +27,10 @@ local servers = {
 	"tinymist",
 }
 for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup({
-		on_attach = lsp_keymap.attach,
-		capabilities = capabilities,
-	})
+    nvim_lsp[lsp] = {
+        on_attach = lsp_keymap.attach,
+        capabilities = capabilities,
+    }
 end
 
 -- Custom configs

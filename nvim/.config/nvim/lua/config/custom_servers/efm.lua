@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local attach = require("config.lsp_keymap").attach
 
 
@@ -30,7 +29,7 @@ local prettier = {
 	},
 }
 
-lspconfig.efm.setup({
+vim.lsp.config['efm'] = {
 	init_options = { documentFormatting = true },
 	on_attach = attach,
 	filetypes = {
@@ -90,4 +89,4 @@ lspconfig.efm.setup({
 		-- 	css = prettier,
 		-- },
 	},
-})
+}
