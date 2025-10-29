@@ -44,7 +44,7 @@ alias cdp="cd ${HOME}/Personal"
 alias cdw="cd ${HOME}/Work"
 alias cdT="cd ${HOME}/Personal/TESTING"
 alias cdd="pwd | tr -d '\n' | wl-copy"
-alias vswaps="cd ~/.local/share/nvim/swap"
+alias vswaps="cd ${HOME}/.local/state/nvim/swap"
 
 alias cmx="chmod +x"
 
@@ -86,6 +86,9 @@ alias wttr="curl v2.wttr.in/Bern"
 
 alias blue="sudo rfkill unblock bluetooth"
 alias bblue="sudo rfkill block bluetooth"
+alias bluec="bluetoothctl connect"
+alias blued="bluetoothctl disconnect"
+
 
 # Helpful funcitons 
 os(){ fd . ~/ -Hc always | fzf -m --ansi | xargs -d '\n' -r xdg-open;}
