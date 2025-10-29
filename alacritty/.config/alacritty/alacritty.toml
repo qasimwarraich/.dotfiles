@@ -38,7 +38,7 @@ shape = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 8.0
+size = 9.0
 
 [font.bold]
 family = "Hack Nerd Font"
