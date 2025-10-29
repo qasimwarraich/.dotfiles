@@ -28,11 +28,11 @@ local on_attach = function(client, bufnr)
 	local active_clients = vim.lsp.get_clients()
 	if client.name == "denols" then
 		for _, client_ in pairs(active_clients) do
-			if client_.name == "tsserver" then
+			if client_.name == "ts_ls" then
 				client.stop()
 			end
 		end
-	elseif client.name == "tsserver" then
+	elseif client.name == "ts_ls" then
 		for _, client_ in pairs(active_clients) do
 			if client_.name == "denols" then
 				client.stop()

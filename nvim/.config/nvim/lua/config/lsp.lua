@@ -19,7 +19,7 @@ local servers = {
 	"texlab",
 	"svelte",
 	"tailwindcss",
-	"denols",
+	-- "denols",
 	"eslint",
 	"terraformls",
 	"ruff",
@@ -31,11 +31,12 @@ for _, lsp in ipairs(servers) do
         on_attach = lsp_keymap.attach,
         capabilities = capabilities,
     }
+    vim.lsp.enable(lsp)
 end
 
 -- Custom configs
 require("config.custom_servers.lua_ls")
 require("config.custom_servers.rust")
-require("config.custom_servers.deno")
+-- require("config.custom_servers.deno")
 require("config.custom_servers.emmet")
 require("config.custom_servers.efm")
