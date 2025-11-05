@@ -40,3 +40,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Search and repace under cursor
 vim.keymap.set("n", "<leader>/", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Term 
+vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n>]])
