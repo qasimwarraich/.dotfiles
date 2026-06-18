@@ -89,6 +89,7 @@ alias bblue="sudo rfkill block bluetooth"
 alias bluec="bluetoothctl connect"
 alias blued="bluetoothctl disconnect"
 
+alias rip="yt-dlp -x --audio-format mp3"
 
 # Helpful funcitons 
 os(){ fd . ~/ -Hc always | fzf -m --ansi | xargs -d '\n' -r xdg-open;}
