@@ -4,7 +4,7 @@ fortune
 HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
-setopt autocd extendedglob nomatch
+setopt autocd extendedglob nomatch inc_append_history share_history
 unsetopt beep
 bindkey -v
 export KEYTIMEOUT=1
@@ -60,10 +60,10 @@ source ~/.config/zsh_config/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/spam/.config/zsh_config/fzf-tab/fzf-tab.plugin.zsh
 source /home/spam/.config/zsh_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# #Pyenv
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 #The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/spam/Clones/google-cloud-sdk/path.zsh.inc' ]; then . '/home/spam/Clones/google-cloud-sdk/path.zsh.inc'; fi
