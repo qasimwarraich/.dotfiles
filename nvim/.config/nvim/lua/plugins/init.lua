@@ -34,12 +34,12 @@ return {
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^5",
-		lazy = false, -- This plugin is already lazy
 	},
 
 	-- CMP
 	{
 		"hrsh7th/nvim-cmp",
+		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
 			{ "tzachar/cmp-tabnine", build = "./install.sh" },
 			"hrsh7th/cmp-nvim-lsp",
@@ -55,15 +55,26 @@ return {
 			"rafamadriz/friendly-snippets",
 			"f3fora/cmp-spell",
 		},
+		config = function()
+			require("config.cmp")
+		end,
 	},
-	"lervag/vimtex",
+	{ "lervag/vimtex", ft = { "tex" } },
 
 	-- Debugger
-	"mfussenegger/nvim-dap",
-	"rcarriga/nvim-dap-ui",
-	"nvim-neotest/nvim-nio",
-	"theHamsta/nvim-dap-virtual-text",
-	"mfussenegger/nvim-dap-python",
+	{
+		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
+			"theHamsta/nvim-dap-virtual-text",
+			"mfussenegger/nvim-dap-python",
+		},
+		config = function()
+			require("config.dap")
+		end,
+	},
 
 	-- Formatter
 	"sbdchd/neoformat",
@@ -75,26 +86,42 @@ return {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-context",
-		},
-		run = ":TSUpdate",
+		branch = "main",
+		event = "BufReadPost",
+		init = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					pcall(vim.treesitter.start)
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
+			})
+		end,
+		config = function()
+			require("config.treesitter")
+		end,
 	},
-
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = "BufReadPost",
+	},
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.3",
+		event = "BufReadPost",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
+		config = function()
+			require("config.telescope")
+		end,
 	},
 
 	-- Testing
 	"vim-test/vim-test",
 	{
 		"nvim-neotest/neotest",
+		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
@@ -103,11 +130,15 @@ return {
 			"rouge8/neotest-rust",
 			"haydenmeade/neotest-jest",
 		},
+		config = function()
+			require("config.neotest")
+		end,
 	},
 
 	-- Databases
 	{
 		"tpope/vim-dadbod",
+		ft = { "sql", "mysql", "plsql" },
 		dependencies = {
 			"kristijanhusak/vim-dadbod-ui",
 			{
@@ -126,8 +157,8 @@ return {
 	-- Usefull Stuff
 	"tpope/vim-fugitive",
 	"lewis6991/gitsigns.nvim",
-	"mbbill/undotree",
-	"theprimeagen/harpoon",
+	{ "mbbill/undotree", event = "VeryLazy" },
+	{ "theprimeagen/harpoon", event = "VeryLazy" },
 	"lukas-reineke/indent-blankline.nvim",
 	{ "numToStr/Comment.nvim", config = get_default("Comment") },
 	{ "kylechui/nvim-surround", config = get_default("nvim-surround") },

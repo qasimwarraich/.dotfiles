@@ -19,12 +19,12 @@ local servers = {
 	"texlab",
 	"svelte",
 	"tailwindcss",
-	-- "denols",
 	"eslint",
-	"terraformls",
 	"ruff",
 	"sourcekit",
 	"tinymist",
+	"harper_ls",
+    "tofu_ls",
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp] = {
@@ -40,3 +40,4 @@ require("config.custom_servers.rust")
 -- require("config.custom_servers.deno")
 require("config.custom_servers.emmet")
 require("config.custom_servers.efm")
+-- require("config.custom_servers.terraformls")
